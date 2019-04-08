@@ -9,13 +9,13 @@
 * Maven to handle JavaFX dependencies.
 ** Just use it whenever you got the choice.
 ** _Please_ use an IDE. Sublime Text isn't gonna cut it anymore
-** Try https://www.jetbrains.com/idea/[IntelliJ]. It's great.
+*** Try https://www.jetbrains.com/idea/[IntelliJ]. It's great.
 
 ****
 
 .Related Links:
 ****
-* https://github.com/Mauville/AutoGit[AutoGit] if you don't know how to use Git.
+* https://github.com/Mauville/AutoGit/tree/Akali[AutoGit] if you don't know how to use Git.
 ****
 == Stage 1
 
