@@ -1,0 +1,11 @@
+<?import javafx.scene.layout.GridPane?>
+<?import java.net.URL?>
+<GridPane fx:controller="Akali.Consultor.SearchController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <!--https://www.callicoder.com/javafx-css-tutorial/-->
+    <!--this must go before the root element tag closes-->
+    <stylesheets>
+        <URL value="/../styles.css"/>
+    </stylesheets>
+</GridPane>
+
