@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="88.0" layoutY="66.0" text="{{RESOURCE TITLE}}">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="92.0" layoutY="119.0" text="Text" />
+      <Label layoutX="93.0" layoutY="183.0" text="Language" />
+      <TextField layoutX="98.0" layoutY="213.0" text="{{LANG}}" />
+      <Label layoutX="349.0" layoutY="257.0" text="Status" />
+      <TextField layoutX="98.0" layoutY="277.0" text="{{DISCOVERER}}" />
+      <Label layoutX="347.0" layoutY="118.0" text="Title" />
+      <TextField layoutX="355.0" layoutY="150.0" text="{{TITLE}}" />
+      <Button layoutX="384.0" layoutY="461.0" mnemonicParsing="false" text="Save" />
+      <Button layoutX="450.0" layoutY="461.0" mnemonicParsing="false" text="Cancel" />
+      <ChoiceBox layoutX="357.0" layoutY="213.0" prefWidth="150.0" />
+      <Label layoutX="92.0" layoutY="248.0" text="Discoverer" />
+      <TextField layoutX="99.0" layoutY="150.0" prefHeight="25.0" prefWidth="101.0" text="{{FILE}}" />
+      <Button layoutX="225.0" layoutY="150.0" mnemonicParsing="false" text="Browse..." />
+      <Label layoutX="347.0" layoutY="183.0" text="Region" />
+      <ChoiceBox layoutX="357.0" layoutY="277.0" prefWidth="150.0" />
+      <Label layoutX="93.0" layoutY="316.0" text="Type" />
+      <ChoiceBox layoutX="99.0" layoutY="336.0" prefWidth="150.0" />
+      <Label layoutX="349.0" layoutY="316.0" text="Pages" />
+      <TextField disable="true" layoutX="358.0" layoutY="346.0" />
+      <TextField disable="true" layoutX="358.0" layoutY="410.0" />
+      <Label layoutX="347.0" layoutY="381.0" text="Words" />
+      <Label layoutX="94.0" layoutY="382.0" text="Audio Files" />
+      <TextField disable="true" layoutX="105.0" layoutY="414.0" prefHeight="25.0" prefWidth="101.0" text="No file selected" />
+      <Button disable="true" layoutX="231.0" layoutY="414.0" mnemonicParsing="false" text="Browse..." />
+      <Button layoutX="94.0" layoutY="461.0" mnemonicParsing="false" text="Delete Resource" />
+   </children>
+</Pane>

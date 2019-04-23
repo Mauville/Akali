@@ -1,4 +1,4 @@
 package Akali.Consultor;
 
-public class SearchResultsController {
+public class SearchController {
 }
