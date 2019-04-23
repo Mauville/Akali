@@ -9,7 +9,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="88.0" layoutY="66.0" text="Add New Resource">
+       <Label layoutX="88.0" layoutY="66.0" text="Add New AbstractResource">
          <font>
             <Font size="18.0" />
          </font>

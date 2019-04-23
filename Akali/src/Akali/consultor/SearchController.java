@@ -1,4 +1,4 @@
-package Akali.Consultor;
+package Akali.consultor;
 
 public class SearchController {
 }

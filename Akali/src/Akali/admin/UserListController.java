@@ -1,4 +1,4 @@
-package Akali.Admin;
+package Akali.admin;
 
 public class UserListController {
 }
