@@ -1,3 +1,4 @@
+package Akali.resource;
 
 public abstract class AbstractResource {
     private String content, language, status, origin, author;

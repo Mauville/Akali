@@ -1,5 +1,5 @@
 package Akali.resource;
 
 public class Text extends AbstractResource {
-private int pages, words;
+    private int pages, words;
 }
