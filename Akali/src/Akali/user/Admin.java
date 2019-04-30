@@ -1,6 +1,7 @@
 package Akali.user;
 
-public class Consultant extends AbstractUser {
+public class Admin extends AbstractUser {
     public void analyze() {
     }
 }
+
