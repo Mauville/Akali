@@ -23,7 +23,6 @@ public class ChangeUserController {
     private Button save;
     @FXML
     private Button cancel;
-
     @FXML
     void HandleSave(){}
     @FXML
