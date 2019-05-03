@@ -1,10 +1,7 @@
 package Akali;
 
 
-import Akali.user.Admin;
-import Akali.user.Consultant;
-import Akali.user.Manager;
-import Akali.user.Translator;
+import Akali.user.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -33,38 +30,53 @@ public class AddUserController {
     @FXML
     void HandleSignIn(String username, String password) {
 
+
     }
+
     @FXML
     void HandleSignUp() {
 
-        Consultant user = new Consultant();
-        user.setUsername(RegUsername.getText());
-        user.setPassword(RegPassword.getText());
-        user.setEmail(RegEmail.getText());
-        user.setMatricle(RegMatricle.getText());
+        AbstractUser user;
 
-        Translator user = new Translator();
-        user.setUsername(RegUsername.getText());
-        user.setPassword(RegPassword.getText());
-        user.setEmail(RegEmail.getText());
-        user.setMatricle(RegMatricle.getText());
+        switch (RegPrivilege.getSelectionModel().getSelectedItem().toString()) {
+            case "Consultant":
+                Consultant banana = new Consultant();
+                banana.setUsername(RegUsername.getText());
+                banana.setPassword(RegPassword.getText());
+                banana.setEmail(RegEmail.getText());
+                banana.setMatricle(RegMatricle.getText());
+                user = banana;
+                break;
 
-        Manager user = new Translator();
-        user.setUsername(RegUsername.getText());
-        user.setPassword(RegPassword.getText());
-        user.setEmail(RegEmail.getText());
-        user.setMatricle(RegMatricle.getText());
+            case "Translator":
+                Translator mango = new Translator();
+                mango.setUsername(RegUsername.getText());
+                mango.setPassword(RegPassword.getText());
+                mango.setEmail(RegEmail.getText());
+                mango.setMatricle(RegMatricle.getText());
+                user = mango;
+                break;
 
-        Manager user = new Translator();
-        user.setUsername(RegUsername.getText());
-        user.setPassword(RegPassword.getText());
-        user.setEmail(RegEmail.getText());
-        user.setMatricle(RegMatricle.getText());
+            case "Manager":
+                Manager cherry = new Manager();
+                cherry.setUsername(RegUsername.getText());
+                cherry.setPassword(RegPassword.getText());
+                cherry.setEmail(RegEmail.getText());
+                cherry.setMatricle(RegMatricle.getText());
+                user = cherry;
+                break;
 
-        Admin user = new Translator();
-        user.setUsername(RegUsername.getText());
-        user.setPassword(RegPassword.getText());
-        user.setEmail(RegEmail.getText());
-        user.setMatricle(RegMatricle.getText());
+            case "Admin":
+                Admin mangosteen = new Admin();
+                mangosteen.setUsername(RegUsername.getText());
+                mangosteen.setPassword(RegPassword.getText());
+                mangosteen.setEmail(RegEmail.getText());
+                mangosteen.setMatricle(RegMatricle.getText());
+                user = mangosteen;
+                break;
+
+        }
+
+        // TODO Implement user method using IO
     }
 }
