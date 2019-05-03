@@ -2,7 +2,8 @@ package Akali.user;
 
 public class Manager extends AbstractUser{
 	private void deleteUser() {//deletes it from the abstract classes
-		//TODO dont know how to delete a user object
+        //TODO don't know how to delete a user object
+        //TODO send to UserLogic with the parameters deleteUser(String name);
 	}
 	private void addTranslator(){
 		Translator t = new Translator();

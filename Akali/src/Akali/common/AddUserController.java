@@ -1,11 +1,14 @@
-package Akali;
+package Akali.common;
 
 
+import Akali.UserLogic;
 import Akali.user.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+
+import static Akali.UserLogic.createFile;
 
 public class AddUserController {
     @FXML
@@ -36,7 +39,7 @@ public class AddUserController {
     @FXML
     void HandleSignUp() {
 
-        AbstractUser user;
+        AbstractUser user = new Admin();
 
         switch (RegPrivilege.getSelectionModel().getSelectedItem().toString()) {
             case "Consultant":
@@ -76,6 +79,7 @@ public class AddUserController {
                 break;
 
         }
+        createFile(user);
 
         // TODO Implement user method using IO
     }
