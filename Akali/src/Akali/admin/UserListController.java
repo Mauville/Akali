@@ -55,6 +55,5 @@ public class UserListController {
         return confirmed;
     }
 
-    public boolean
 
 }

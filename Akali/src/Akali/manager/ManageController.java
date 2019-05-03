@@ -51,7 +51,7 @@ public class ManageController {
     void handleCancel(){}
     @FXML
     void handleSave(){
-        content.getChildren().setAll(FXMLLoader.load("vista2.fxml"));
+        //content.getChildren().setAll(FXMLLoader.load("vista2.fxml"));
     }
     @FXML
     void displayBrowse(){}
