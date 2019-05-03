@@ -7,7 +7,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Akali.manager.AddController">
+<Pane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="518.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea"
+      fx:controller="Akali.manager.AddController">
    <children>
        <Label layoutX="88.0" layoutY="66.0" text="Add New Resource">
          <font>
@@ -26,7 +28,8 @@
       <ChoiceBox fx:id="region" layoutX="357.0" layoutY="213.0" prefWidth="150.0" />
       <Label layoutX="92.0" layoutY="248.0" text="Discoverer" />
       <TextField fx:id="text" editable="false" layoutX="99.0" layoutY="150.0" prefHeight="25.0" prefWidth="101.0" text="No file selected" />
-      <Button fx:id="browseText" layoutX="225.0" layoutY="150.0" mnemonicParsing="false" onAction="#displaybrowse" text="Browse..." />
+      <Button fx:id="browseText" layoutX="225.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleText"
+              text="Browse..."/>
       <Label layoutX="347.0" layoutY="183.0" text="Region" />
       <ChoiceBox fx:id="status" layoutX="357.0" layoutY="277.0" prefWidth="150.0" />
       <Label layoutX="93.0" layoutY="316.0" text="Type" />
@@ -37,6 +40,7 @@
       <Label layoutX="347.0" layoutY="381.0" text="Words" />
       <Label layoutX="94.0" layoutY="382.0" text="Audio Files" />
       <TextField fx:id="audio" editable="false" layoutX="105.0" layoutY="414.0" prefHeight="25.0" prefWidth="101.0" text="No file selected" />
-      <Button fx:id="browseAudio" layoutX="231.0" layoutY="414.0" mnemonicParsing="false" onAction="#displaybrowse" text="Browse..." />
+      <Button fx:id="browseAudio" layoutX="231.0" layoutY="414.0" mnemonicParsing="false" onAction="#handleAudio"
+              text="Browse..."/>
    </children>
 </Pane>

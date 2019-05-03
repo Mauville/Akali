@@ -8,6 +8,9 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
+import static Akali.Browse.openAudioChooser;
+import static Akali.Browse.openTextChooser;
+
 public class AddController {
     @FXML
     private Button cancel;
@@ -44,7 +47,14 @@ public class AddController {
     @FXML
     void handleSave(){}
     @FXML
-    void displaybrowse(){}
-    void changeBrowseTextField(){}
+    void handleText() {
+        openTextChooser(text);
+    }
+
+    @FXML
+    void handleAudio() {
+        openAudioChooser(audio);
+    }
+
 
 }
