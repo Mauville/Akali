@@ -23,7 +23,9 @@ public class AmmendController {
     private TextField browsestate;
 
     @FXML
-    void handleBrowse(){}
+    void handleBrowse(){
+        //TODO HANDLE BROWSE PENDEJA
+    }
     @FXML
     void handleDownloadOriginal(){}
     @FXML
