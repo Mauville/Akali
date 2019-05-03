@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene
 
 public class AmmendController {
     @FXML
@@ -25,6 +26,9 @@ public class AmmendController {
     @FXML
     void handleBrowse(){
         //TODO HANDLE BROWSE PENDEJA
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        fileChooser.showOpenDialog(stage);
     }
     @FXML
     void handleDownloadOriginal(){}
