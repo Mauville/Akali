@@ -1,10 +1,15 @@
 package manager;
 //  https://stackoverflow.com/questions/29338352/create-filechooser-in-fxml
 
+import com.sun.javafx.scene.control.skin.ChoiceBoxSkin;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+
+import static Akali.Browse.openAudioChooser;
+import static Akali.Browse.openTextChooser;
 
 public class AddController {
     @FXML
@@ -42,14 +47,16 @@ public class AddController {
     }
 
     @FXML
-    void handleSave() {
+    void handleSave(){}
+    @FXML
+    void handleText() {
+        openTextChooser(text);
     }
 
     @FXML
-    void displaybrowse() {
+    void handleAudio() {
+        openAudioChooser(audio);
     }
 
-    void changeBrowseTextField() {
-    }
 
 }

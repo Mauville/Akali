@@ -39,23 +39,14 @@ public class ManageController {
     @FXML
     private Label wintitle;
 
-
     @FXML
-    void handleCancel() {
-    }
-
+    void handleCancel(){}
     @FXML
-    void handleSave() {
+    void handleSave(){
     }
-
     @FXML
-    void displayBrowse() {
-    }
-
+    void displayBrowse(){}
     @FXML
-    void handleDelete() {
-    }
-
-    void changeBrowseTextField() {
-    }
+    void handleDelete(){}
+    void changeBrowseTextField(){}
 }
