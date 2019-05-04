@@ -1,17 +1,20 @@
-package Akali.user;
+package user;
 
-public class InfoManager extends AbstractUser{
-	public void deleteRes() {
-		
-	}
-	public void addRes() {
-		
-	}
-	public void getStatus() {
-		
-	}
-	public void editRes() {
-		
-	}
+public class InfoManager extends AbstractUser {
+    public void deleteRes() {
+
+    }
+
+    public void addRes() {
+
+    }
+
+    public void getStatus() {
+
+    }
+
+    public void editRes() {
+
+    }
 
 }

@@ -1,4 +1,4 @@
-package Akali.translator;
+package translator;
 //  https://stackoverflow.com/questions/29338352/create-filechooser-in-fxml
 
 import javafx.fxml.FXML;
@@ -23,20 +23,30 @@ public class AmmendController {
     private TextField browsestate;
 
     @FXML
-    void handleBrowse(){
+    void handleBrowse() {
         //TODO HANDLE BROWSE PENDEJA
     }
-    @FXML
-    void handleDownloadOriginal(){}
-    @FXML
-    void handleDownloadTranslated(){}
-    @FXML
-    void handleSubmit(){}
-    @FXML
-    void handleBack(){}
 
-    void updateBrowseField(){}
+    @FXML
+    void handleDownloadOriginal() {
+    }
 
-    void initialize(){}
+    @FXML
+    void handleDownloadTranslated() {
+    }
+
+    @FXML
+    void handleSubmit() {
+    }
+
+    @FXML
+    void handleBack() {
+    }
+
+    void updateBrowseField() {
+    }
+
+    void initialize() {
+    }
 
 }

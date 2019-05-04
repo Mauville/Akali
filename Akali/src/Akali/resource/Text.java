@@ -1,6 +1,4 @@
-package Akali.resource;
-
-import java.util.ArrayList;
+package resource;
 
 public class Text extends AbstractResource {
     private int pages, words;

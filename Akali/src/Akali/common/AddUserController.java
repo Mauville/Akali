@@ -1,7 +1,6 @@
-package Akali;
+package common;
 
-
-import Akali.user.*;
+import user.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -31,6 +30,10 @@ public class AddUserController {
     void HandleSignIn(String username, String password) {
 
 
+    }
+
+    @FXML
+    void HandleSignIn() {
     }
 
     @FXML

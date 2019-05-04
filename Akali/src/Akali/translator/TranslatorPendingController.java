@@ -1,4 +1,4 @@
-package Akali.translator;
+package translator;
 //  https://stackoverflow.com/questions/29338352/create-filechooser-in-fxml
 
 import javafx.fxml.FXML;
@@ -18,6 +18,8 @@ public class TranslatorPendingController {
     private TableColumn status;
     @FXML
     private TableColumn buttact;
+
     @FXML
-    void handleBack(){}
+    void handleBack() {
+    }
 }

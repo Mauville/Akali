@@ -1,4 +1,4 @@
-package Akali.manager;
+package manager;
 //  https://stackoverflow.com/questions/29338352/create-filechooser-in-fxml
 
 import javafx.fxml.FXML;

@@ -1,10 +1,7 @@
-package Akali;
+package common;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class ChangeUserController {
     @FXML
@@ -18,15 +15,21 @@ public class ChangeUserController {
     @FXML
     private TextField matricle;
     @FXML
-    private ComboBox privilege;
+    private ChoiceBox privilege;
     @FXML
     private Button save;
     @FXML
     private Button cancel;
+
     @FXML
-    void HandleSave(){}
+    void HandleSave() {
+    }
+
     @FXML
-    void HandleBack(){}
+    void HandleBack() {
+    }
+
     @FXML
-    void initialize(){}
+    void initialize() {
+    }
 }

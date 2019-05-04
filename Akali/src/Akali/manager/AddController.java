@@ -1,11 +1,9 @@
-package Akali.manager;
+package manager;
 //  https://stackoverflow.com/questions/29338352/create-filechooser-in-fxml
 
-import com.sun.javafx.scene.control.skin.ChoiceBoxSkin;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
 public class AddController {
@@ -40,11 +38,18 @@ public class AddController {
 
 
     @FXML
-    void handleCancel(){}
+    void handleCancel() {
+    }
+
     @FXML
-    void handleSave(){}
+    void handleSave() {
+    }
+
     @FXML
-    void displaybrowse(){}
-    void changeBrowseTextField(){}
+    void displaybrowse() {
+    }
+
+    void changeBrowseTextField() {
+    }
 
 }
