@@ -1,4 +1,4 @@
-package Akali.user;
+package user;
 
 public abstract class AbstractUser {
     private String username, password, email, matricle;

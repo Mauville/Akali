@@ -1,4 +1,4 @@
-package Akali.manager;
+package manager;
 //  https://stackoverflow.com/questions/29338352/create-filechooser-in-fxml
 
 import javafx.fxml.FXML;
@@ -12,7 +12,7 @@ public class ManageResourceController {
     @FXML
     private Button download;
     @FXML
-    private Button rejectj;
+    private Button reject;
     @FXML
     private Button approve;
     @FXML
@@ -27,15 +27,24 @@ public class ManageResourceController {
     private Label title;
 
     @FXML
-    void handleBack(){}
+    void handleBack() {
+    }
+
     @FXML
-    void handleDownload(){}
+    void handleDownload() {
+    }
+
     @FXML
-    void handleReject(){}
+    void handleReject() {
+    }
+
     @FXML
-    void handleApprove(){}
+    void handleApprove() {
+    }
+
     @FXML
-    void initialize(){}
+    void initialize() {
+    }
 
 
 }

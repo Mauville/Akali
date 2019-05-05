@@ -7,40 +7,41 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-      minWidth="-Infinity" prefHeight="518.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea"
-      fx:controller="Akali.manager.AddController">
-   <children>
-       <Label layoutX="88.0" layoutY="66.0" text="Add New Resource">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="92.0" layoutY="119.0" text="Text" />
-      <Label layoutX="93.0" layoutY="183.0" text="Language" />
-      <TextField fx:id="language" layoutX="98.0" layoutY="213.0" />
-      <Label layoutX="349.0" layoutY="257.0" text="Status" />
-      <TextField fx:id="discoverer" layoutX="98.0" layoutY="277.0" />
-      <Label layoutX="347.0" layoutY="118.0" text="Title" />
-      <TextField fx:id="title" layoutX="355.0" layoutY="150.0" />
-      <Button fx:id="save" layoutX="384.0" layoutY="461.0" mnemonicParsing="false" onAction="#handleSave" text="Save" />
-      <Button fx:id="cancel" cancelButton="true" layoutX="450.0" layoutY="461.0" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
-      <ChoiceBox fx:id="region" layoutX="357.0" layoutY="213.0" prefWidth="150.0" />
-      <Label layoutX="92.0" layoutY="248.0" text="Discoverer" />
-      <TextField fx:id="text" editable="false" layoutX="99.0" layoutY="150.0" prefHeight="25.0" prefWidth="101.0" text="No file selected" />
-      <Button fx:id="browseText" layoutX="225.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleText"
-              text="Browse..."/>
-      <Label layoutX="347.0" layoutY="183.0" text="Region" />
-      <ChoiceBox fx:id="status" layoutX="357.0" layoutY="277.0" prefWidth="150.0" />
-      <Label layoutX="93.0" layoutY="316.0" text="Type" />
-      <ChoiceBox fx:id="type" layoutX="99.0" layoutY="336.0" prefWidth="150.0" />
-      <Label layoutX="349.0" layoutY="316.0" text="Pages" />
-      <TextField fx:id="pages" layoutX="358.0" layoutY="346.0" />
-      <TextField fx:id="words" layoutX="358.0" layoutY="410.0" />
-      <Label layoutX="347.0" layoutY="381.0" text="Words" />
-      <Label layoutX="94.0" layoutY="382.0" text="Audio Files" />
-      <TextField fx:id="audio" editable="false" layoutX="105.0" layoutY="414.0" prefHeight="25.0" prefWidth="101.0" text="No file selected" />
-      <Button fx:id="browseAudio" layoutX="231.0" layoutY="414.0" mnemonicParsing="false" onAction="#handleAudio"
-              text="Browse..."/>
-   </children>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="manager.AddController">
+    <Label layoutX="88.0" layoutY="66.0" text="Add New Resource">
+        <font>
+            <Font size="18.0"/>
+        </font>
+    </Label>
+    <Label layoutX="92.0" layoutY="119.0" text="Text"/>
+    <Label layoutX="93.0" layoutY="183.0" text="Language"/>
+    <TextField fx:id="language" layoutX="98.0" layoutY="213.0"/>
+    <Label layoutX="349.0" layoutY="257.0" text="Status"/>
+    <TextField fx:id="discoverer" layoutX="98.0" layoutY="277.0"/>
+    <Label layoutX="347.0" layoutY="118.0" text="Title"/>
+    <TextField fx:id="title" layoutX="355.0" layoutY="150.0"/>
+    <Button fx:id="save" layoutX="384.0" layoutY="461.0" mnemonicParsing="false" onAction="#handleSave" text="Save"/>
+    <Button fx:id="cancel" cancelButton="true" layoutX="450.0" layoutY="461.0" mnemonicParsing="false"
+            onAction="#handleCancel" text="Cancel"/>
+    <ChoiceBox fx:id="region" layoutX="357.0" layoutY="213.0" prefWidth="150.0"/>
+    <Label layoutX="92.0" layoutY="248.0" text="Discoverer"/>
+    <TextField fx:id="text" editable="false" layoutX="99.0" layoutY="150.0" prefHeight="25.0" prefWidth="101.0"
+               text="No file selected"/>
+    <Button fx:id="browseText" layoutX="225.0" layoutY="150.0" mnemonicParsing="false" onAction="#displaybrowse"
+            text="Browse..."/>
+    <Label layoutX="347.0" layoutY="183.0" text="Region"/>
+    <ChoiceBox fx:id="status" layoutX="357.0" layoutY="277.0" prefWidth="150.0"/>
+    <Label layoutX="93.0" layoutY="316.0" text="Type"/>
+    <ChoiceBox fx:id="type" layoutX="99.0" layoutY="336.0" prefWidth="150.0"/>
+    <Label layoutX="349.0" layoutY="316.0" text="Pages"/>
+    <TextField fx:id="pages" layoutX="358.0" layoutY="346.0"/>
+    <TextField fx:id="words" layoutX="358.0" layoutY="410.0"/>
+    <Label layoutX="347.0" layoutY="381.0" text="Words"/>
+    <Label layoutX="94.0" layoutY="382.0" text="Audio Files"/>
+    <TextField fx:id="audio" editable="false" layoutX="105.0" layoutY="414.0" prefHeight="25.0" prefWidth="101.0"
+               text="No file selected"/>
+    <Button fx:id="browseAudio" layoutX="231.0" layoutY="414.0" mnemonicParsing="false" onAction="#displaybrowse"
+            text="Browse..."/>
 </Pane>

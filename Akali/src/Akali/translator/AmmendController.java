@@ -1,4 +1,4 @@
-package Akali.translator;
+package translator;
 //  https://stackoverflow.com/questions/29338352/create-filechooser-in-fxml
 
 import javafx.fxml.FXML;
@@ -33,7 +33,6 @@ public class AmmendController {
     void handleBrowse() {
         openFileChooser(browsestate);
     }
-
     @FXML
     void handleDownloadOriginal() {
     }
