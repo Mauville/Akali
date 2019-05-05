@@ -8,7 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
-import static Akali.UserLogic.createFile;
+import static Akali.UserLogic.createUserFile;
 
 public class AddUserController {
     @FXML
@@ -79,7 +79,7 @@ public class AddUserController {
                 break;
 
         }
-        createFile(user);
+        createUserFile(user);
 
         // TODO Implement user method using IO
     }
