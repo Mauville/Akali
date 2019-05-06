@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 
-import static Akali.Browse.openFileChooser;
+import static logic.Browse.openFileChooser;
 
 public class AmmendController {
     @FXML
@@ -52,7 +52,7 @@ public class AmmendController {
     void updateBrowseField() {
     }
 
-    void initialize() {
+    private void initialize() {
     }
 }
 

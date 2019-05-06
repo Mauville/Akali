@@ -1,13 +1,27 @@
 package user;
 
 public abstract class AbstractUser {
-    private String username, password, email, matricle;
+    private String username;
+    private String password;
+    private String email;
+    private String matricle;
+    public static String privilege;
+
+    public static String getPrivilege() {
+        return privilege;
+    }
+
+    public void setPrivilege(String privilege) {
+        privilege = privilege;
+    }
 
     private void editAcc(String username, String password) {
         this.username = username;
         this.password = password;
 
     }
+
+
 
     public String getUsername() {
         return username;

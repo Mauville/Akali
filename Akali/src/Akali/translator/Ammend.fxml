@@ -19,7 +19,7 @@
     <Label layoutX="82.0" layoutY="326.0" text="Download Latest Translated"/>
     <Label layoutX="458.0" layoutY="140.0" text="Original"/>
     <Button fx:id="browse" layoutX="234.0" layoutY="419.0" mnemonicParsing="false" onAction="#handleBrowse"
-            text="Browse"/>
+            text="logic.Browse"/>
     <TextArea fx:id="message" editable="false" layoutX="88.0" layoutY="159.0" prefHeight="140.0" prefWidth="215.0"
               text="{{NOTES}}"/>
     <Button fx:id="dowloadTranslated" layoutX="108.0" layoutY="353.0" mnemonicParsing="false"

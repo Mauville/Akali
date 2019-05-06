@@ -16,5 +16,8 @@ public class InfoManager extends AbstractUser {
     public void editRes() {
 
     }
+    public static String getPrivilege(){
+        return "";
+    }
 
 }

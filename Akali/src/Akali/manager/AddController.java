@@ -8,8 +8,8 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
-import static Akali.Browse.openAudioChooser;
-import static Akali.Browse.openTextChooser;
+import static logic.Browse.openAudioChooser;
+import static logic.Browse.openTextChooser;
 
 public class AddController {
     @FXML

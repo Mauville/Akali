@@ -13,4 +13,7 @@ public class Translator extends AbstractUser {
     private void updateStatus() {
 
     }
+    public static String getPrivilege(){
+        return "TRANSLATOR";
+    }
 }
