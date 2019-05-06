@@ -1,8 +1,22 @@
+// Each user's button should make a new popup window with ChangeUser and the object loaded in memory
+//FXMLLoader fxmlLoader = new FXMLLoader();
+//        fxmlLoader.setLocation(getClass().getResource("NewWindow.fxml"));
+//        /*
+//         * if "fx:controller" is not set in fxml
+//         * fxmlLoader.setController(NewWindowController);
+//         */
+//        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+//        Stage stage = new Stage();
+//        stage.setTitle("New Window");
+//        stage.setScene(scene);
+//        stage.show();
+
 package admin;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import vistanavigator.VistaNavigator;
 
 import java.io.*;
 
@@ -21,6 +35,7 @@ public class UserListController {
 
     @FXML
     void handleBackButton() {
+        VistaNavigator.loadVista(VistaNavigator.COMMON_ADDUSER);
     }
 
     public boolean createFile(Object u) {
