@@ -2,14 +2,15 @@ package manager;
 //  https://stackoverflow.com/questions/29338352/create-filechooser-in-fxml
 
 import com.sun.javafx.scene.control.skin.ChoiceBoxSkin;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import vistanavigator.VistaNavigator;
 
-import static logic.Browse.openAudioChooser;
-import static logic.Browse.openTextChooser;
+import static logic.Browse.openFileChooser;
 
 public class AddController {
     @FXML
@@ -39,24 +40,28 @@ public class AddController {
     @FXML
     private ChoiceBox status;
     @FXML
-    private ChoiceBox type;
-
-
+    private ChoiceBox<String> type;
     @FXML
     void handleCancel() {
+        vistanavigator.VistaNavigator.loadVista(VistaNavigator.MANAGER_PENDING);
     }
 
     @FXML
-    void handleSave(){}
-    @FXML
-    void handleText() {
-        openTextChooser(text);
+    void handleSave(){
+       //TODO choicebox troubleshoot
+        vistanavigator.VistaNavigator.loadVista(VistaNavigator.MANAGER_PENDING);
     }
 
     @FXML
-    void handleAudio() {
-        openAudioChooser(audio);
+    void handleRes() {
+        openFileChooser(text);
+    }
+
+    @FXML
+    private void selectType(ActionEvent e){
+
+        }
+
     }
 
 
-}

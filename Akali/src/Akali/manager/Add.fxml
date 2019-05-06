@@ -7,41 +7,43 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0"
-      prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="manager.AddController">
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.AddController">
     <Label layoutX="88.0" layoutY="66.0" text="Add New Resource">
         <font>
-            <Font size="18.0"/>
+            <Font size="18.0" />
         </font>
     </Label>
-    <Label layoutX="92.0" layoutY="119.0" text="Text"/>
-    <Label layoutX="93.0" layoutY="183.0" text="Language"/>
-    <TextField fx:id="language" layoutX="98.0" layoutY="213.0"/>
-    <Label layoutX="349.0" layoutY="257.0" text="Status"/>
-    <TextField fx:id="discoverer" layoutX="98.0" layoutY="277.0"/>
-    <Label layoutX="347.0" layoutY="118.0" text="Title"/>
-    <TextField fx:id="title" layoutX="355.0" layoutY="150.0"/>
-    <Button fx:id="save" layoutX="384.0" layoutY="461.0" mnemonicParsing="false" onAction="#handleSave" text="Save"/>
-    <Button fx:id="cancel" cancelButton="true" layoutX="450.0" layoutY="461.0" mnemonicParsing="false"
-            onAction="#handleCancel" text="Cancel"/>
-    <ChoiceBox fx:id="region" layoutX="357.0" layoutY="213.0" prefWidth="150.0"/>
-    <Label layoutX="92.0" layoutY="248.0" text="Discoverer"/>
-    <TextField fx:id="text" editable="false" layoutX="99.0" layoutY="150.0" prefHeight="25.0" prefWidth="101.0"
-               text="No file selected"/>
-    <Button fx:id="browseText" layoutX="225.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleText"
-            text="logic.Browse..."/>
-    <Label layoutX="347.0" layoutY="183.0" text="Region"/>
-    <ChoiceBox fx:id="status" layoutX="357.0" layoutY="277.0" prefWidth="150.0"/>
-    <Label layoutX="93.0" layoutY="316.0" text="Type"/>
-    <ChoiceBox fx:id="type" layoutX="99.0" layoutY="336.0" prefWidth="150.0"/>
-    <Label layoutX="349.0" layoutY="316.0" text="Pages"/>
-    <TextField fx:id="pages" layoutX="358.0" layoutY="346.0"/>
-    <TextField fx:id="words" layoutX="358.0" layoutY="410.0"/>
-    <Label layoutX="347.0" layoutY="381.0" text="Words"/>
-    <Label layoutX="94.0" layoutY="382.0" text="Audio Files"/>
-    <TextField fx:id="audio" editable="false" layoutX="105.0" layoutY="414.0" prefHeight="25.0" prefWidth="101.0"
-               text="No file selected"/>
-    <Button fx:id="browseAudio" layoutX="231.0" layoutY="414.0" mnemonicParsing="false" onAction="#handleAudio"
-            text="logic.Browse..."/>
+    <Label layoutX="92.0" layoutY="119.0" text="Resource" />
+    <Label layoutX="342.0" layoutY="107.0" text="Language" />
+    <TextField fx:id="language" layoutX="355.0" layoutY="137.0" />
+    <Label layoutX="86.0" layoutY="329.0" text="Status" />
+    <TextField fx:id="discoverer" layoutX="355.0" layoutY="194.0" />
+    <Label layoutX="346.0" layoutY="224.0" text="Title" />
+    <TextField fx:id="title" layoutX="355.0" layoutY="243.0" />
+    <Button fx:id="save" layoutX="384.0" layoutY="461.0" mnemonicParsing="false" onAction="#handleSave" text="Save" />
+    <Button fx:id="cancel" cancelButton="true" layoutX="450.0" layoutY="461.0" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
+    <ChoiceBox fx:id="region" layoutX="94.0" layoutY="285.0" prefWidth="150.0" />
+    <Label layoutX="350.0" layoutY="167.0" text="Author" />
+    <TextField fx:id="text" editable="false" layoutX="99.0" layoutY="150.0" prefHeight="25.0" prefWidth="101.0" text="No file selected" />
+    <Button fx:id="browseText" layoutX="225.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleRes" text="Browse..." />
+    <Label layoutX="84.0" layoutY="255.0" text="Region" />
+    <ChoiceBox fx:id="status" layoutX="94.0" layoutY="349.0" prefWidth="150.0" />
+    <Label layoutX="86.0" layoutY="194.0" text="Type" />
+    <ChoiceBox fx:id="type" layoutX="92.0" layoutY="214.0" prefWidth="150.0" >
+
+    <items>
+        <FXCollections fx:factory="observableArrayList">
+            <String fx:value="2 minutes" />
+            <String fx:value="5 minutes" />
+            <String fx:value="15 minutes" />
+        </FXCollections>
+    </items>
+    </ChoiceBox>
+    <Label layoutX="347.0" layoutY="278.0" text="Pages" />
+    <TextField fx:id="pages" layoutX="356.0" layoutY="308.0" />
+    <TextField fx:id="words" layoutX="356.0" layoutY="372.0" />
+    <Label layoutX="345.0" layoutY="343.0" text="Words" />
+    <Label layoutX="392.0" layoutY="107.0" />
 </Pane>
