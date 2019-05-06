@@ -10,6 +10,8 @@ public class ManagerPendingController {
     @FXML
     private Button back;
     @FXML
+    private Button add;
+    @FXML
     private TableView table;
     @FXML
     private TableColumn title;
@@ -17,5 +19,9 @@ public class ManagerPendingController {
     private TableColumn status;
     @FXML
     private TableColumn buttonact;
+
+    @FXML void handleAdd(){}
+
+    @FXML void handleBack(){}
 
 }
