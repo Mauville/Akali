@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -77,18 +78,34 @@ public class UserLogic {
 
 
     //Only creates the file in the path, doesn't create the directory
-    public static boolean createUserFile(AbstractUser user) {
+    public static FileOutputStream createUserFile(AbstractUser user) {
         String path = "res\\userFiles" + File.separator + user.getUsername();
-        boolean success = false;
+        FileOutputStream fos = null;
         try {
-            FileOutputStream fos = new FileOutputStream(path + user.getUsername() + ".akali");
+            fos = new FileOutputStream(path + user.getUsername() + ".akali");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(user);
             oos.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        success = consultUser(user);
+        assert consultUser(user);
+        return fos;
+    }
+
+    public static boolean updateUser(String username, AbstractUser newOverwrite) {
+        boolean success = false;
+        String pathOriginal = "res/userFiles/" + username;
+        File oldFile = new File("res/userFiles/" + username + File.separator + username + ".akali");
+        deleteUser(oldFile.getPath());
+        if (newOverwrite.getUsername().equals(username)) {
+            createUserFile(newOverwrite);
+        } else {
+            File oldDir = new File(pathOriginal);
+            String newPath = "res/userFiles/" + newOverwrite.getUsername();
+            createUserFile(newOverwrite);
+            assert oldDir.renameTo(new File(newPath));
+        }
         return success;
     }
 
