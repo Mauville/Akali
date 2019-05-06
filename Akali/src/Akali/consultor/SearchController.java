@@ -1,4 +1,4 @@
-package Akali.consultor;
+package consultor;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -11,6 +11,7 @@ public class SearchController {
     private Button send;
 
     @FXML
-    void HandleSend(){}
+    void HandleSend() {
+    }
 
 }

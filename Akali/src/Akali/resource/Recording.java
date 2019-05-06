@@ -1,4 +1,4 @@
-package Akali.resource;
+package resource;
 
 public class Recording extends AbstractResource {
     private String path;

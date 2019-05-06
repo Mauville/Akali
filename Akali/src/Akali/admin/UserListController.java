@@ -1,4 +1,4 @@
-package Akali.admin;
+package admin;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -20,7 +20,8 @@ public class UserListController {
     private Button backbutt;
 
     @FXML
-    void handleBackButton(){}
+    void handleBackButton() {
+    }
 
     public boolean createFile(Object u) {
         boolean confirmed = false;

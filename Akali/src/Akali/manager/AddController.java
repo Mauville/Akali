@@ -1,4 +1,4 @@
-package Akali.manager;
+package manager;
 //  https://stackoverflow.com/questions/29338352/create-filechooser-in-fxml
 
 import com.sun.javafx.scene.control.skin.ChoiceBoxSkin;
@@ -43,7 +43,9 @@ public class AddController {
 
 
     @FXML
-    void handleCancel(){}
+    void handleCancel() {
+    }
+
     @FXML
     void handleSave(){}
     @FXML

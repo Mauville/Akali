@@ -3,6 +3,10 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+<<<<<<< HEAD
+=======
+      <sourceFolder url="file://$MODULE_DIR$/Akali/src/Akali" isTestSource="false" />
+>>>>>>> 648f90f97318692d15db67a873fee686e15227bf
       <sourceFolder url="file://$MODULE_DIR$/Akali/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />

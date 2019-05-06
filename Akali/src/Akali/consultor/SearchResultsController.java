@@ -1,4 +1,4 @@
-package Akali.user;
+package consultor;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -27,8 +27,11 @@ public class SearchResultsController {
     private TableView table;
 
     @FXML
-    void HandleSend(){}
+    void HandleSend() {
+    }
+
     @FXML
-    void initialize(){}
+    void initialize() {
+    }
 
 }

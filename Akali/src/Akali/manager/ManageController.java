@@ -1,14 +1,9 @@
-package Akali.manager;
+package manager;
 //  https://stackoverflow.com/questions/29338352/create-filechooser-in-fxml
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
-import java.awt.*;
 
 public class ManageController {
     @FXML
@@ -36,22 +31,18 @@ public class ManageController {
     @FXML
     private Button cancel;
     @FXML
-    private ComboBox region;
+    private ChoiceBox region;
     @FXML
-    private ComboBox status;
+    private ChoiceBox status;
     @FXML
-    private ComboBox type;
+    private ChoiceBox type;
     @FXML
     private Label wintitle;
-    @FXML
-    private Panel content;
-
 
     @FXML
     void handleCancel(){}
     @FXML
     void handleSave(){
-        //content.getChildren().setAll(FXMLLoader.load("vista2.fxml"));
     }
     @FXML
     void displayBrowse(){}

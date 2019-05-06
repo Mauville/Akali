@@ -1,4 +1,4 @@
-package Akali.translator;
+package translator;
 //  https://stackoverflow.com/questions/29338352/create-filechooser-in-fxml
 
 import javafx.fxml.FXML;
@@ -19,12 +19,20 @@ public class TranslateController {
     private TextField browsestate;
     @FXML
     private TextArea message;
+
     @FXML
-    void handleBrowse() { }
+    void handleBrowse() {
+    }
+
     @FXML
-    void handleSubmit(){}
+    void handleSubmit() {
+    }
+
     @FXML
-    void handleBack(){}
+    void handleBack() {
+    }
+
     @FXML
-    void handleDownload(){}
+    void handleDownload() {
+    }
 }

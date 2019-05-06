@@ -1,4 +1,4 @@
-package Akali.user;
+package user;
 
 public class Manager extends AbstractUser{
 	private void deleteUser() {//deletes it from the abstract classes

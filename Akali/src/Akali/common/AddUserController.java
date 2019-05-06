@@ -1,14 +1,14 @@
-package Akali.common;
+package common;
 
+import user.*;
 
 import Akali.UserLogic;
-import Akali.user.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
-import static Akali.UserLogic.createFile;
+import static Akali.UserLogic.createUserFile;
 
 public class AddUserController {
     @FXML
@@ -31,9 +31,7 @@ public class AddUserController {
     private Button SignUp;
 
     @FXML
-    void HandleSignIn(String username, String password) {
-
-
+    void HandleSignIn() {
     }
 
     @FXML
@@ -79,7 +77,7 @@ public class AddUserController {
                 break;
 
         }
-        createFile(user);
+        createUserFile(user);
 
         // TODO Implement user method using IO
     }
