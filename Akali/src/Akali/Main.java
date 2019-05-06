@@ -34,7 +34,7 @@ public class Main extends Application {
         VistaNavigator.setMainController(mainController);
         // NOTE: If you wanna try a scene, change the constant here.
         // You can find the full list at VistaNavigator
-        VistaNavigator.loadVista(VistaNavigator.COMMON_ADDUSER);
+        VistaNavigator.loadVista(VistaNavigator.MANAGER_ADD);
         return mainPane;
     }
 
