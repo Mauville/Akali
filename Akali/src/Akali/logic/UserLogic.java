@@ -2,7 +2,14 @@ package logic;
 
 import user.AbstractUser;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 public class UserLogic {
 //TODO LogIn & SignUp
@@ -40,8 +47,9 @@ public class UserLogic {
 
         //Create file under new dirPath
         File newFile = new File(dirPath + File.separator + newFileName);
+        String userPath = dirPath + File.separator + newFileName;
 
-        FileOutputStream fos = new FileOutputStream(newFileName);
+        FileOutputStream fos = new FileOutputStream(userPath);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(o);
         oos.close();
@@ -64,43 +72,16 @@ public class UserLogic {
         } else { //Dir may already exist
             System.out.printf("\n3. Unable to create dir");
         }
-
-
         return everythingOK;
     }
 
-    /*
-    public static boolean createUser(AbstractUser o) {
-        String name = o.getUsername();
-        File f = null;
-        boolean bool = false;
-        try {
-            // returns pathnames for files and directory
-            f = new File("/res/userFiles/" + name);
-            // create directories
-            bool = f.mkdirs();
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        try {
-            FileOutputStream fos = new FileOutputStream(name + ".alv");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(o);
-            oos.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return bool;
-    }
-     */
     //Only creates the file in the path, doesn't create the directory
     public static boolean createUserFile(AbstractUser user) {
+        String path = "res\\userFiles" + File.separator + user.getUsername();
         boolean success = false;
         try {
-            FileOutputStream fos = new FileOutputStream(user.getUsername() + ".alv");
+            FileOutputStream fos = new FileOutputStream(path + user.getUsername() + ".akali");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(user);
             oos.close();
@@ -121,7 +102,7 @@ public class UserLogic {
         return confirmed;
     }
 
-    //Does the file exist? Recieving path WITH THE .alv FILE
+    //Does the file exist? Recieving path WITH THE .akali FILE
     public static boolean consultUser(String path) {
         boolean confirmed = false;
         File f = new File(path);
@@ -135,7 +116,7 @@ public class UserLogic {
         boolean success = false;
         String oldName = oldUser.getUsername();
         File f = new File("/res/userFiles/" + oldName);
-        success = deleteUser("/res/userFiles/" + oldName + "/" + oldName + ".alv");
+        success = deleteUser("/res/userFiles/" + oldName + "/" + oldName + ".akali");
 
 
         return success;
@@ -145,15 +126,15 @@ public class UserLogic {
     public static boolean deleteUser(AbstractUser user) {
         boolean confirm = false;
         String name = user.getUsername();
-        String path = "/res/userFiles/" + name + "/" + name + ".alv";
+        String path = "/res/userFiles/" + name + "/" + name + ".akali";
         File f = new File(path);
         if (f.delete() && consultUser(user))
             confirm = true;
         return confirm;
     }
 
-    //Delete user, recieves path WITH THE FILE "/res/userFiles/[NAME]/[NAME].alv
-    //It's super important the path has de .alv in it, otherwise it will delete the hole directory
+    //Delete user, recieves path WITH THE FILE "/res/userFiles/[NAME]/[NAME].akali
+    //It's super important the path has de .akali in it, otherwise it will delete the hole directory
     public static boolean deleteUser(String path) {
         boolean confirm = false;
         File f = new File(path);
@@ -163,17 +144,22 @@ public class UserLogic {
     }
 
     //Add Original file to the common "/res/originalFiles", recieving the file
-    public static boolean addOriginal(File f) {
+    public static boolean addOriginal(File f) throws IOException {
         boolean success = false;
-
-
+        Path pathCopy = Paths.get("/res/originalFiles/");
+        Path pathOriginal = Paths.get(f.getAbsolutePath());
+        Files.copy(pathOriginal, pathCopy, StandardCopyOption.REPLACE_EXISTING);
+        assert (Files.readAllLines(pathOriginal).equals(Files.readAllLines(pathCopy)));
         return success;
     }
 
     ////Add Original file to the common "/res/originalFiles", recieving the path of the original
-    public static boolean addOriginal(String path) {
+    public static boolean addOriginal(String path) throws IOException {
         boolean success = false;
-        File f = new File(path);
+        Path pathCopy = Paths.get("/res/originalFiles");
+        Path pathOriginal = Paths.get(path);
+        Files.copy(pathOriginal, pathCopy, StandardCopyOption.REPLACE_EXISTING);
+        assert (Files.readAllLines(pathOriginal).equals(Files.readAllLines(pathCopy)));
 
         return success;
     }
