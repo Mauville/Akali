@@ -30,6 +30,6 @@ public class ChangeUserController {
     }
 
     @FXML
-    void initialize() {
+    private void initialize() {
     }
 }

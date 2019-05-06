@@ -1,4 +1,4 @@
-package Akali;
+package logic;
 
 import user.AbstractUser;
 

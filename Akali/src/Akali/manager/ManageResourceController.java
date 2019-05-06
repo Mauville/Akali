@@ -43,7 +43,7 @@ public class ManageResourceController {
     }
 
     @FXML
-    void initialize() {
+    private void initialize() {
     }
 
 

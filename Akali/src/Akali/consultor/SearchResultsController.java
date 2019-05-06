@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import vistanavigator.VistaNavigator;
 
 public class SearchResultsController {
     @FXML
@@ -28,10 +29,11 @@ public class SearchResultsController {
 
     @FXML
     void HandleSend() {
+        VistaNavigator.loadVista(VistaNavigator.CONSULTOR_SEARCHRESULTS);
     }
 
     @FXML
-    void initialize() {
+    private  void initialize() {
     }
 
 }

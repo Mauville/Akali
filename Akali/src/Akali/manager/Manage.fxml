@@ -31,7 +31,7 @@
     <Label layoutX="92.0" layoutY="248.0" text="Discoverer"/>
     <TextField fx:id="text" layoutX="99.0" layoutY="150.0" prefHeight="25.0" prefWidth="101.0" text="{{FILE}}"/>
     <Button fx:id="textBrowse" layoutX="225.0" layoutY="150.0" mnemonicParsing="false" onAction="#displayBrowse"
-            text="Browse..."/>
+            text="logic.Browse..."/>
     <Label layoutX="347.0" layoutY="183.0" text="Region"/>
     <ChoiceBox fx:id="status" layoutX="357.0" layoutY="277.0" prefWidth="150.0"/>
     <Label layoutX="93.0" layoutY="316.0" text="Type"/>
@@ -44,7 +44,7 @@
     <TextField fx:id="audio" layoutX="105.0" layoutY="414.0" prefHeight="25.0" prefWidth="101.0"
                text="No file selected"/>
     <Button fx:id="audioBrowse" layoutX="231.0" layoutY="414.0" mnemonicParsing="false" onAction="#displayBrowse"
-            text="Browse..."/>
+            text="logic.Browse..."/>
     <Button fx:id="delete" layoutX="94.0" layoutY="461.0" mnemonicParsing="false" onAction="#handleDelete"
             text="Delete Resource"/>
 </Pane>

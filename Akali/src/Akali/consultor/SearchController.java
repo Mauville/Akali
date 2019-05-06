@@ -3,6 +3,7 @@ package consultor;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import vistanavigator.VistaNavigator;
 
 public class SearchController {
     @FXML
@@ -12,6 +13,7 @@ public class SearchController {
 
     @FXML
     void HandleSend() {
+        VistaNavigator.loadVista(VistaNavigator.CONSULTOR_SEARCHRESULTS);
     }
 
 }
