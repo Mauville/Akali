@@ -1,9 +1,11 @@
 package Akali;
 
-import Akali.user.AbstractUser;
+import user.AbstractUser;
 
-import java.io.*;
-
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 public class UserLogic {
 //TODO LogIn & SignUp
     //TODO finish deletingFile addOriginal addTranslated
