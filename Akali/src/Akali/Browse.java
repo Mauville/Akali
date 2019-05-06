@@ -25,29 +25,4 @@ public class Browse {
         return selectedFile;
     }
 
-    public static File openAudioChooser(TextField a) {
-        Stage filer = new Stage();
-        FileChooser FC = new FileChooser();
-        FC.setTitle("Choose resource File");
-        FC.getExtensionFilters().addAll((
-                new FileChooser.ExtensionFilter("Audio Files .mp3", "*.mp3")
-        ));
-        File selectedFile = FC.showOpenDialog(filer);
-        System.out.println(selectedFile.getName());
-        a.setText(selectedFile.getName());
-        return selectedFile;
-    }
-
-    public static File openTextChooser(TextField a) {
-        Stage filer = new Stage();
-        FileChooser FC = new FileChooser();
-        FC.setTitle("Choose resource File");
-        FC.getExtensionFilters().addAll((
-                new FileChooser.ExtensionFilter("Audio Files .mp3", "*.mp3")
-        ));
-        File selectedFile = FC.showOpenDialog(filer);
-        System.out.println(selectedFile.getName());
-        a.setText(selectedFile.getName());
-        return selectedFile;
-    }
 }

@@ -1,6 +1,6 @@
 package Akali;
 
-import Akali.user.AbstractUser;
+import user.AbstractUser;
 
 import java.io.*;
 
