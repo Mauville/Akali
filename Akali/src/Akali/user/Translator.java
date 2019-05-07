@@ -1,7 +1,9 @@
 package user;
 
 
-public class Translator extends AbstractUser {
+import java.io.Serializable;
+
+public class Translator extends AbstractUser implements Serializable {
     private void analyze() {
 
     }
@@ -13,7 +15,7 @@ public class Translator extends AbstractUser {
     private void updateStatus() {
 
     }
-    public static String getPrivilege(){
+    public String getPrivilege(){
         return "TRANSLATOR";
     }
 }

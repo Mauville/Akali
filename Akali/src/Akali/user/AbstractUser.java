@@ -1,13 +1,15 @@
 package user;
 
-public abstract class AbstractUser {
+import java.io.Serializable;
+
+public abstract class AbstractUser implements Serializable {
     private String username;
     private String password;
     private String email;
     private String matricle;
-    public static String privilege;
+    public String privilege = "CONSULTANT";
 
-    public static String getPrivilege() {
+    public String getPrivilege() {
         return privilege;
     }
 
@@ -20,7 +22,6 @@ public abstract class AbstractUser {
         this.password = password;
 
     }
-
 
 
     public String getUsername() {

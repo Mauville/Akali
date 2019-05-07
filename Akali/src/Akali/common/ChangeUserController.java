@@ -2,6 +2,7 @@ package common;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 public class ChangeUserController {
     @FXML
@@ -23,10 +24,14 @@ public class ChangeUserController {
 
     @FXML
     void HandleSave() {
+
     }
 
     @FXML
     void HandleBack() {
+        Stage stage = (Stage) cancel.getScene().getWindow();
+        stage.close();
+
     }
 
     @FXML

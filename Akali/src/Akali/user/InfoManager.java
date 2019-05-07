@@ -1,6 +1,8 @@
 package user;
 
-public class InfoManager extends AbstractUser {
+import java.io.Serializable;
+
+public class InfoManager extends AbstractUser implements Serializable {
     public void deleteRes() {
 
     }
@@ -16,7 +18,7 @@ public class InfoManager extends AbstractUser {
     public void editRes() {
 
     }
-    public static String getPrivilege(){
+    public String getPrivilege(){
         return "";
     }
 

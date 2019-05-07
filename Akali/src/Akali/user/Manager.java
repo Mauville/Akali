@@ -1,6 +1,8 @@
 package user;
 
-public class Manager extends AbstractUser{
+import java.io.Serializable;
+
+public class Manager extends AbstractUser implements Serializable {
 	private void deleteUser() {//deletes it from the abstract classes
         //TODO don't know how to delete a user object
         //TODO send to logic.UserLogic with the parameters deleteUser(String name);
@@ -25,7 +27,7 @@ public class Manager extends AbstractUser{
 		m.setPassword("");
 		m.setUsername(""/*input*/);
 	}
-	public static String getPrivilege(){
+	public String getPrivilege(){
 		return "MANAGER";
 	}
 }

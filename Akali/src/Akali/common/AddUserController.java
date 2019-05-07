@@ -1,5 +1,6 @@
 package common;
 
+import javafx.scene.control.ChoiceBox;
 import user.*;
 
 import logic.UserLogic;
@@ -9,6 +10,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import vistanavigator.VistaNavigator;
 
+import java.io.IOException;
+
+import static logic.UserLogic.createUser;
 import static logic.UserLogic.createUserFile;
 
 public class AddUserController {
@@ -25,25 +29,32 @@ public class AddUserController {
     @FXML
     private TextField RegMatricle;
     @FXML
-    private ComboBox RegPrivilege;
+    private ChoiceBox RegPrivilege;
     @FXML
     private Button SignIn;
-    @FXML
     private Button SignUp;
 
-    /**
-     * SIGN IN
-     */
     @FXML
     void HandleSignIn() {
         //check credentials
-        //get data from storage
+        assert username.getText() != null;
+        assert password.getText() != null;
 
-//        redirect(user);
+        //get data from storage
+        String usrname = username.getText();
+        String pass = password.getText();
+
+        String direct = "CONSULTANT";
+
+        if (passfunct(usrname).equals(pass)) {
+            direct = mijosprivilege(usrname);
+        }
+        redirect(direct.toUpperCase());
     }
 
+
     private void redirect(AbstractUser requester) {
-        switch (AbstractUser.privilege) {
+        switch (requester.privilege) {
             case "ADMIN":
                 VistaNavigator.loadVista(VistaNavigator.ADMIN_USERLIST);
                 break;
@@ -56,31 +67,30 @@ public class AddUserController {
             case "TRANSLATOR":
                 VistaNavigator.loadVista(VistaNavigator.TRANSLATOR_ONGOING);
                 break;
+            default:
+                System.out.println("MIKE");
         }
     }
 
-    /**
-     * SIGN IN
-     */
 
     @FXML
     void HandleSignUp() {
 
-        AbstractUser user;
+        AbstractUser user = null;
 
-        switch (RegPrivilege.getSelectionModel().getSelectedItem().toString()) {
+        switch (String.valueOf(RegPrivilege.getSelectionModel().getSelectedItem())){
             case "Consultant":
-                Consultant banana = new Consultant();
+                AbstractUser banana = new Consultant();
                 banana.setUsername(RegUsername.getText());
                 banana.setPassword(RegPassword.getText());
                 banana.setEmail(RegEmail.getText());
                 banana.setMatricle(RegMatricle.getText());
                 user = banana;
-                // Do storage stuff
+
                 break;
 
             case "Translator":
-                Translator mango = new Translator();
+                AbstractUser mango = new Translator();
                 mango.setUsername(RegUsername.getText());
                 mango.setPassword(RegPassword.getText());
                 mango.setEmail(RegEmail.getText());
@@ -90,7 +100,7 @@ public class AddUserController {
                 break;
 
             case "InfoManager":
-                InfoManager cherry = new InfoManager();
+                AbstractUser cherry = new InfoManager();
                 cherry.setUsername(RegUsername.getText());
                 cherry.setPassword(RegPassword.getText());
                 cherry.setEmail(RegEmail.getText());
@@ -100,7 +110,7 @@ public class AddUserController {
                 break;
 
             case "Manager":
-                Manager mangosteen = new Manager();
+                AbstractUser mangosteen = new Manager();
                 mangosteen.setUsername(RegUsername.getText());
                 mangosteen.setPassword(RegPassword.getText());
                 mangosteen.setEmail(RegEmail.getText());
@@ -109,7 +119,16 @@ public class AddUserController {
                 // Do storage stuff
                 break;
 
+            default:
+                throw new IllegalStateException("Unexpected value: " + RegPrivilege.getSelectionModel().getSelectedItem().toString());
         }
+        try {
+            createUser(user);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
 //        createUserFile(user);
 //        redirect(user);
 
