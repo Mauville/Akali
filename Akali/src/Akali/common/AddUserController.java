@@ -28,22 +28,28 @@ public class AddUserController {
     private ComboBox RegPrivilege;
     @FXML
     private Button SignIn;
-    @FXML
     private Button SignUp;
 
-    /**
-     * SIGN IN
-     */
     @FXML
     void HandleSignIn() {
         //check credentials
-        //get data from storage
+        assert username.getText() != null;
+        assert password.getText() != null;
 
-//        redirect(user);
+        //get data from storage
+        String usrname = username.getText();
+        String pass = password.getText();
+
+        AbstractUser credentials = getMijo(usrname);
+
+        assert credentials.getPassword().equals(pass);
+
+        redirect(credentials);
     }
 
+
     private void redirect(AbstractUser requester) {
-        switch (AbstractUser.privilege) {
+        switch (AbstractUser.getPrivilege()) {
             case "ADMIN":
                 VistaNavigator.loadVista(VistaNavigator.ADMIN_USERLIST);
                 break;
@@ -56,12 +62,11 @@ public class AddUserController {
             case "TRANSLATOR":
                 VistaNavigator.loadVista(VistaNavigator.TRANSLATOR_ONGOING);
                 break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + AbstractUser.getPrivilege());
         }
     }
 
-    /**
-     * SIGN IN
-     */
 
     @FXML
     void HandleSignUp() {
