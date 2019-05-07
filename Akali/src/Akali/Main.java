@@ -1,3 +1,4 @@
+import common.ChangeUserController;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +21,6 @@ public class Main extends Application {
         stage.setTitle("Akali");
         stage.setScene(createScene(loadMainPane()));
         stage.show();
-
     }
 
     /**
@@ -55,5 +55,4 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
 }

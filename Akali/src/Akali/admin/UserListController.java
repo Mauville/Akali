@@ -13,6 +13,7 @@
 
 package admin;
 
+import common.ChangeUserController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -20,12 +21,17 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import resource.AbstractResource;
 import user.AbstractUser;
+import user.AbstractUser;
+import user.InfoManager;
+import vistanavigator.MainController;
 import vistanavigator.VistaNavigator;
 
 import java.io.*;
 
 import static logic.Browse.getIRes;
 import static logic.Browse.getIUser;
+
+import static vistanavigator.VistaNavigator.getMainController;
 
 public class UserListController {
 
@@ -41,10 +47,24 @@ public class UserListController {
     private TableColumn <AbstractUser,String>buttoncol;
     @FXML
     private Button backbutt;
+    @FXML
+    private Button colButt;
 
     @FXML
     void handleBackButton() {
         VistaNavigator.loadVista(VistaNavigator.COMMON_ADDUSER);
+    }
+
+    //Method to handle the button at the last row
+    @FXML
+    void handleColButt() {
+        // Pass data to next scene controller:
+        // This is the instance of abstract user to pass to the next
+        AbstractUser theOneYouChoose = new InfoManager();
+        theOneYouChoose.setEmail("demo@demo.com");
+        ChangeUserController writeBuffer = new ChangeUserController();
+        VistaNavigator.persistUser(theOneYouChoose, writeBuffer);
+
     }
 
     public boolean createFile(Object u) {
@@ -76,7 +96,7 @@ public class UserListController {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+    }
         return confirmed;
     }
 
