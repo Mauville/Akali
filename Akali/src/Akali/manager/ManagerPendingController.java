@@ -17,7 +17,10 @@ import resource.AbstractResource;
 import vistanavigator.VistaNavigator;
 
 
+import java.io.IOException;
+
 import static logic.Browse.getIRes;
+import static logic.UserLogic.getData;
 import static vistanavigator.VistaNavigator.*;
 
 public class ManagerPendingController {
@@ -58,7 +61,7 @@ public class ManagerPendingController {
         VistaNavigator.loadVista(COMMON_ADDUSER);
     }
 
-    @FXML void initialize(){
+    @FXML void initialize() throws IOException {
         title.setCellValueFactory(new PropertyValueFactory<AbstractResource, String>("title"));
         status.setCellValueFactory(new PropertyValueFactory<AbstractResource, String>("status"));
         button.setCellValueFactory(new PropertyValueFactory<AbstractResource, Button>("button"));
