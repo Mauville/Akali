@@ -1,6 +1,7 @@
 package translator;
 //  https://stackoverflow.com/questions/29338352/create-filechooser-in-fxml
 
+import common.ChangeUserController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -8,6 +9,10 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import resource.AbstractResource;
+import user.AbstractUser;
+import vistanavigator.MainController;
+import vistanavigator.VistaNavigator;
 
 import java.io.File;
 
@@ -28,6 +33,16 @@ public class AmmendController {
     private TextArea message;
     @FXML
     private TextField browsestate;
+
+    public AbstractResource getBuffercontroller() {
+        return buffercontroller;
+    }
+
+    public void setBuffercontroller(AbstractResource buffercontroller) {
+        this.buffercontroller = buffercontroller;
+    }
+
+    private AbstractResource buffercontroller;
 
     @FXML
     void handleBrowse() {
@@ -53,7 +68,14 @@ public class AmmendController {
     void updateBrowseField() {
     }
 
+    @FXML
     private void initialize() {
+        //Load data from main controller
+        MainController main = VistaNavigator.getMainController();
+        AmmendController buffered = main.getBufferedAmmendController();
+        // Load instace of past Abstract Resource
+        AbstractResource buffRes = buffered.getBuffercontroller();
     }
+
 }
 

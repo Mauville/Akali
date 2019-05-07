@@ -5,6 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import resource.AbstractResource;
+import resource.Text;
+import vistanavigator.VistaNavigator;
 
 public class TranslatorPendingController {
 
@@ -18,8 +21,23 @@ public class TranslatorPendingController {
     private TableColumn status;
     @FXML
     private TableColumn buttact;
+    @FXML
+    private Button button;
+
+    @FXML
+    private void handleButton(){
+        AbstractResource buff = new Text();
+        AmmendController buffcontroller = new AmmendController();
+        buffcontroller.setBuffercontroller(buff);
+        VistaNavigator.persistResource(buff, buffcontroller);
+    }
 
     @FXML
     void handleBack() {
     }
+
+
+
+
+
 }

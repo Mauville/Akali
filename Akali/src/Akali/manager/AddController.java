@@ -2,16 +2,20 @@ package manager;
 //  https://stackoverflow.com/questions/29338352/create-filechooser-in-fxml
 
 import com.sun.javafx.scene.control.skin.ChoiceBoxSkin;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import resource.*;
 import resource.Recording;
 import resource.Text;
 import vistanavigator.VistaNavigator;
+import java.util.ArrayList;
 
-import static logic.Browse.openFileChooser;
+import static logic.Browse.*;
 
 public class AddController {
+    //public  static ArrayList<AbstractResource> data;
     @FXML
     private Button cancel;
     @FXML
@@ -46,10 +50,9 @@ public class AddController {
 
     @FXML
     void handleSave(){
-        String x = String.valueOf(type.getSelectionModel().getSelectedItem());
         if(String.valueOf(type.getSelectionModel().getSelectedItem()).equals("Recording")){
 
-            Recording rec =new Recording();
+            AbstractResource rec =new Recording();
 
 
 
@@ -57,29 +60,30 @@ public class AddController {
             rec.setOrigin(String.valueOf(region.getSelectionModel().getSelectedItem()));
             rec.setAuthor(discoverer.getText());
             rec.setLanguage(language.getText());
-            rec.setDuration(duration.getText());
-            rec.setFil(reso.getText());
+            ((Recording) rec).setDuration(duration.getText());
+            ((Recording) rec).setFil(reso.getText());
             rec.setTitle(title.getText());
+            addTo(rec);
             vistanavigator.VistaNavigator.loadVista(VistaNavigator.MANAGER_PENDING);
 
-            //TODO save recording on listview
 
         }else if(String.valueOf(type.getSelectionModel().getSelectedItem()).equals("Text")){
-
-            Text sts =new Text();
+            AbstractResource sts =new Text();
 
             sts.setStatus(String.valueOf(status.getSelectionModel().getSelectedItem()));
             sts.setOrigin(String.valueOf(region.getSelectionModel().getSelectedItem()));
 
             sts.setAuthor(discoverer.getText());
             sts.setLanguage(language.getText());
-
-            sts.setWords(words.getText());
-            sts.setPages(pages.getText());
-            sts.setFil(reso.getText());
             sts.setTitle(title.getText());
+
+            ((Text) sts).setWords(words.getText());
+            ((Text) sts).setPages(pages.getText());
+            ((Text) sts).setFil(reso.getText());
+
+            addTo(sts);
+
             vistanavigator.VistaNavigator.loadVista(VistaNavigator.MANAGER_PENDING);
-            //TODO save text on listview
 
         }else{
             Alert tgp= new Alert(Alert.AlertType.ERROR);
@@ -90,6 +94,7 @@ public class AddController {
         }
 
     }
+
 
     @FXML
     void handleRes() {

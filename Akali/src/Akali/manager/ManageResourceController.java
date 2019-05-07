@@ -5,6 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import resource.AbstractResource;
+import vistanavigator.MainController;
+import vistanavigator.VistaNavigator;
 
 public class ManageResourceController {
     @FXML
@@ -26,8 +29,16 @@ public class ManageResourceController {
     @FXML
     private Label title;
 
+
+    public AbstractResource buffered;
+
+    public AbstractResource getBuffered() { return buffered; }
+
+    public void setBuffered(AbstractResource buffered) { this.buffered = buffered; }
+
     @FXML
     void handleBack() {
+        VistaNavigator.loadVista(VistaNavigator.MANAGER_PENDING);
     }
 
     @FXML
@@ -44,6 +55,11 @@ public class ManageResourceController {
 
     @FXML
     private void initialize() {
+        //Load data from main controller
+        MainController main = VistaNavigator.getMainController();
+        ManageResourceController buffered = main.getBufferedManageResourceContrller();
+        // Load instace of past Abstract Res
+        AbstractResource buffUser = buffered.getBuffered();
     }
 
 

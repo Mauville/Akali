@@ -3,8 +3,11 @@ package manager;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import resource.AbstractResource;
 import resource.Recording;
 import resource.Text;
+import vistanavigator.MainController;
+import vistanavigator.VistaNavigator;
 
 
 public class ManageController {
@@ -42,6 +45,12 @@ public class ManageController {
     private Label wintitle;
 
 
+    public AbstractResource buffered;
+
+    public AbstractResource getBuffered() { return buffered; }
+
+    public void setBuffered(AbstractResource buffered) { this.buffered = buffered; }
+
     public void setTex(Text a) {
         pages.setText(a.getPages());
         words.setText(a.getWords());
@@ -61,10 +70,13 @@ public class ManageController {
     void displayBrowse(){}
     @FXML
     void handleDelete(){}
-    void changeBrowseTextField(){}
     @FXML
     void initialize() {
+//        setTex();
+        //Load data from main controller
+        MainController main = VistaNavigator.getMainController();
+        ManageController buffered = main.getBufferedManageController();
+        // Load instace of past Abstract Res
+        AbstractResource buffUser = buffered.getBuffered();
     }
-
-    }
-
+}
