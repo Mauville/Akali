@@ -7,9 +7,9 @@ public abstract class AbstractUser implements Serializable {
     private String password;
     private String email;
     private String matricle;
-    public static String privilege;
+    public String privilege;
 
-    public static String getPrivilege() {
+    public String getPrivilege() {
         return privilege;
     }
 

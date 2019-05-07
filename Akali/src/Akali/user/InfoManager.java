@@ -18,7 +18,7 @@ public class InfoManager extends AbstractUser implements Serializable {
     public void editRes() {
 
     }
-    public static String getPrivilege(){
+    public String getPrivilege(){
         return "";
     }
 
