@@ -1,5 +1,6 @@
 package logic;
 
+import javafx.collections.ObservableArray;
 import resource.AbstractResource;
 import user.AbstractUser;
 
@@ -13,7 +14,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
-import java.util.Scanner;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class UserLogic {
 
@@ -240,12 +243,12 @@ public class UserLogic {
     //TODO Recibo un abstract, en la variable initialize.
 
     //Return the previously saved data from the observable list
-    public static ArrayList<AbstractResource> getData() throws IOException {
+    public static ObservableList getData() throws IOException {
         FileInputStream fis = new FileInputStream("Akali" + File.separator + "res" + File.separator + "data.akali");
         ObjectInputStream ois = new ObjectInputStream(fis);
-        ArrayList<AbstractResource> data = null;
+        ObservableList<AbstractResource> data = null;
         try {
-            data = (ArrayList<AbstractResource>) ois.readObject();
+            data = (ObservableList<AbstractResource>) ois.readObject();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -253,9 +256,8 @@ public class UserLogic {
     }
 
     //Called from AddController, saves current data from the observable list
-    public static void setData(ArrayList data) {
+    public static void setData(ObservableList data) {
         File f = new File("Akali" + File.separator + "res" + File.separator + "data.akali");
-        f.mkdirs();
         try {
             FileOutputStream fos = new FileOutputStream(f);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
