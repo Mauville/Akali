@@ -223,6 +223,7 @@ public class UserLogic {
         }
         System.out.println("Username that wil return is " + elMijo.getUsername());
         return elMijo.getPassword();
+
     }
 
     public static String mijosPrivilege(String username) throws IOException {
