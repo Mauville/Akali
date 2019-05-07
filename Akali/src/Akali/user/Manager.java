@@ -27,7 +27,7 @@ public class Manager extends AbstractUser implements Serializable {
 		m.setPassword("");
 		m.setUsername(""/*input*/);
 	}
-	public static String getPrivilege(){
+	public String getPrivilege(){
 		return "MANAGER";
 	}
 }

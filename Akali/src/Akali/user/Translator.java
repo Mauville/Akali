@@ -15,7 +15,7 @@ public class Translator extends AbstractUser implements Serializable {
     private void updateStatus() {
 
     }
-    public static String getPrivilege(){
+    public String getPrivilege(){
         return "TRANSLATOR";
     }
 }

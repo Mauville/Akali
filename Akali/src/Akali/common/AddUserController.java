@@ -44,22 +44,17 @@ public class AddUserController {
         String usrname = username.getText();
         String pass = password.getText();
 
-        Manager credentials = new Manager();
-//        try {
-//            credentials = UserLogic.getMijo(usrname);
-//        }
-//        catch (IOException e) {
-//            e.getMessage();
-//        }
+        String direct = "CONSULTANT";
 
-
-//        assert credentials.getPassword().equals(pass);
-
-        redirect(credentials);
+        if (passfunct(usrname).equals(pass)) {
+            direct = privfunt(usrname);
+        }
+        redirect(direct.toUpperCase());
     }
 
-    private void redirect(Manager requester) {
-        switch ("CONSULTANT"){
+
+    private void redirect(AbstractUser requester) {
+        switch (requester.privilege) {
             case "ADMIN":
                 VistaNavigator.loadVista(VistaNavigator.ADMIN_USERLIST);
                 break;
@@ -73,7 +68,7 @@ public class AddUserController {
                 VistaNavigator.loadVista(VistaNavigator.TRANSLATOR_ONGOING);
                 break;
             default:
-                throw new IllegalStateException("Unexpected value: " + AbstractUser.getPrivilege());
+                System.out.println("MIKE");
         }
     }
 
