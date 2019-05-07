@@ -64,8 +64,7 @@ public class ManageController {
     void changeBrowseTextField(){}
     @FXML
     void initialize() {
-        setTex();
     }
 
     }
-}
+
