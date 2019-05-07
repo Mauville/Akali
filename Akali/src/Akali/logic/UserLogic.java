@@ -28,7 +28,7 @@ public class UserLogic {
     public static boolean createUser(AbstractUser o) throws IOException {
         boolean everythingOK = false;
 
-        String dirPath = "Akali\\res\\userFiles";
+        String dirPath = "Akali\\res\\userFiles" + File.separator + o.getUsername();
         String dirTranslate = "translated";
         String newFileName = o.getUsername() + ".akali";
 
