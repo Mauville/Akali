@@ -211,6 +211,8 @@ public class UserLogic {
 
     public static String getMijo(String username) throws IOException {
         String path = "res/userFiles/" + username + "/" + username + ".akali";
+        File f = new File(path);
+        System.out.println("Looking in this path... %s" + f.getAbsoluteFile());
         FileInputStream fin = new FileInputStream(path);
         ObjectInputStream ois = new ObjectInputStream(fin);
         AbstractUser elMijo = null;
