@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="manager.ManageResourceController">
+    <Button fx:id="download" layoutX="402.0" layoutY="344.0" mnemonicParsing="false" text="Download"/>
+    <Button fx:id="approve" layoutX="206.0" layoutY="427.0" mnemonicParsing="false" text="Approve"/>
+    <Button fx:id="reject" layoutX="110.0" layoutY="427.0" mnemonicParsing="false" text="Reject"/>
+    <TextArea fx:id="comment" layoutX="84.0" layoutY="144.0" prefHeight="246.0" prefWidth="200.0"
+              promptText="Input revision message for translator"/>
+    <Label fx:id="lang" layoutX="391.0" layoutY="224.0" text="{{Language}}"/>
+    <Label fx:id="stat" layoutX="391.0" layoutY="245.0" text="{{Status}}"/>
+    <Label fx:id="type" layoutX="391.0" layoutY="267.0" text="{{Type}}"/>
+    <Label layoutX="360.0" layoutY="152.0" text="Info:">
+        <font>
+            <Font size="16.0"/>
+        </font>
+    </Label>
+    <Label fx:id="title" layoutX="68.0" layoutY="60.0" text="{{Resource Name}}">
+        <font>
+            <Font size="18.0"/>
+        </font>
+    </Label>
+    <Button fx:id="back" cancelButton="true" layoutX="472.0" layoutY="61.0" mnemonicParsing="false" prefHeight="25.0"
+            prefWidth="54.0" text="Back"/>
+</Pane>
