@@ -71,5 +71,9 @@ public class UserListController {
         return confirmed;
     }
 
+    @FXML
+    private void initialize() {
+
+    }
 
 }

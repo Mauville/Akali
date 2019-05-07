@@ -14,14 +14,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.Scanner;
 
 public class UserLogic {
-//TODO LogIn & SignUp
-    //TODO finish deletingFile addOriginal addTranslated
-    //FilesLogic
-    //UpdateUser
-    //TODO commonFiles
-//TODO recursive deleting
-//TODO  rename deleted folders, delete credentials and keep the translation.
-//TODO when manager "accepts" a traduction, the traduction.txt is moved to "../Finished/"
+
 
 
     //CreateUser v2 Create new file, called on the Log In page
@@ -240,4 +233,8 @@ public class UserLogic {
         privilege = au.getPrivilege();
         return privilege;
     }
+
+
+    //TODO Recibo un abstract, en la variable initialize.
+    //
 }
