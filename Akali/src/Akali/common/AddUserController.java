@@ -47,7 +47,7 @@ public class AddUserController {
         String direct = "CONSULTANT";
 
         if (passfunct(usrname).equals(pass)) {
-            direct = privfunt(usrname);
+            direct = mijosprivilege(usrname);
         }
         redirect(direct.toUpperCase());
     }
