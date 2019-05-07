@@ -38,6 +38,7 @@ public class ManageResourceController {
 
     @FXML
     void handleBack() {
+        VistaNavigator.loadVista(VistaNavigator.MANAGER_PENDING);
     }
 
     @FXML
