@@ -255,6 +255,7 @@ public class UserLogic {
     //Called from AddController, saves current data from the observable list
     public static void setData(ArrayList data) {
         File f = new File("Akali" + File.separator + "res" + File.separator + "data.akali");
+        f.mkdirs();
         try {
             FileOutputStream fos = new FileOutputStream(f);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
