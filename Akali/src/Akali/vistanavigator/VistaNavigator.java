@@ -1,6 +1,13 @@
 package vistanavigator;
 
+import common.ChangeUserController;
 import javafx.fxml.FXMLLoader;
+import manager.ManageController;
+import manager.ManageResourceController;
+import resource.AbstractResource;
+import translator.AmmendController;
+import translator.TranslateController;
+import user.AbstractUser;
 
 import java.io.IOException;
 
@@ -30,6 +37,8 @@ public class VistaNavigator {
     public static final String TRANSLATOR_ONGOING = "../translator/Ongoing.fxml";
     public static final String TRANSLATOR_TRANSLATE = "../translator/Translate.fxml";
     public static final String TRANSLATOR_PENDING_TRANSLATOR = "../translator/PendingTranslator.fxml";
+
+
     /**
      * The main application layout controller.
      */
@@ -42,6 +51,10 @@ public class VistaNavigator {
      */
     public static void setMainController(MainController mainController) {
         VistaNavigator.mainController = mainController;
+    }
+
+    public static MainController getMainController() {
+        return mainController;
     }
 
     /**
@@ -69,4 +82,36 @@ public class VistaNavigator {
         }
     }
 
+    //Persist data between scenes
+    public static void persistUser(AbstractUser user, ChangeUserController persistence) {
+        persistence.setBuffered(user);
+        MainController main = VistaNavigator.getMainController();
+        main.setBufferedUserListController(persistence);
+        System.out.println("Succesfully persisted object" + user.getPrivilege());
+    }
+
+    public static void persistResource(AbstractResource data, AmmendController persistence) {
+        persistence.setBuffercontroller(data);
+        MainController main = VistaNavigator.getMainController();
+        main.setBufferedAmmendController(persistence);
+        System.out.println("Succesfully persisted object" + data.getTitle());
+    }
+    public static void persistResource(AbstractResource data, TranslateController persistence) {
+        persistence.setBuffered(data);
+        MainController main = VistaNavigator.getMainController();
+        main.setBufferedTranslateController(persistence);
+        System.out.println("Succesfully persisted object" + data.getTitle());
+    }
+    public static void persistResource(AbstractResource data, ManageController persistence) {
+        persistence.setBuffered(data);
+        MainController main = VistaNavigator.getMainController();
+        main.setBufferedManageController(persistence);
+        System.out.println("Succesfully persisted object" + data.getTitle());
+    }
+    public static void persistResource(AbstractResource data, ManageResourceController persistence) {
+        persistence.setBuffered(data);
+        MainController main = VistaNavigator.getMainController();
+        main.setBufferedManageResourceContrller(persistence);
+        System.out.println("Succesfully persisted object" + data.getTitle());
+    }
 }
