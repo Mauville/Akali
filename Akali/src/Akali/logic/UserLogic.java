@@ -24,6 +24,7 @@ public class UserLogic {
 
     //CreateUser v2 Create new file, called on the Log In page
     public static boolean createUser(AbstractUser o) throws IOException {
+
         boolean everythingOK = false;
 
         String dirPath = "Akali\\res\\userFiles" + File.separator + o.getUsername();
@@ -244,6 +245,9 @@ public class UserLogic {
 
     //Return the previously saved data from the observable list
     public static ObservableList getData() throws IOException {
+        String path = "\"Akali\" + File.separator + \"res\" + File.separator + \"data.akali\"";
+        File f = new File(path);
+        f.mkdirs();
         FileInputStream fis = new FileInputStream("Akali" + File.separator + "res" + File.separator + "data.akali");
         ObjectInputStream ois = new ObjectInputStream(fis);
         ObservableList<AbstractResource> data = null;
@@ -259,6 +263,7 @@ public class UserLogic {
     public static void setData(ObservableList data) {
         String path = "\"Akali\" + File.separator + \"res\" + File.separator + \"data.akali\"";
         File f = new File(path);
+        f.mkdirs();
         System.out.println("Tryin' to read %s" + path);
         try {
             FileOutputStream fos = new FileOutputStream(f);

@@ -1,5 +1,6 @@
 import common.ChangeUserController;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,8 +10,10 @@ import resource.AbstractResource;
 import user.AbstractUser;
 import vistanavigator.MainController;
 import vistanavigator.VistaNavigator;
-
+import logic.UserLogic.*;
 import java.io.IOException;
+
+import static logic.UserLogic.setData;
 
 // With the help of https://gist.github.com/jewelsea/6460130 framework
 
