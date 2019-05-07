@@ -80,7 +80,7 @@ public class UserLogic {
 
     //Only creates the file in the path, doesn't create the directory
     public static FileOutputStream createUserFile(AbstractUser user) {
-        String path = "res\\userFiles" + File.separator + user.getUsername();
+        String path = "Akali\\res\\userFiles" + File.separator + user.getUsername();
         FileOutputStream fos = null;
         try {
             fos = new FileOutputStream(path + user.getUsername() + ".akali");
@@ -96,14 +96,14 @@ public class UserLogic {
 
     public static boolean updateUser(String username, AbstractUser newOverwrite) {
         boolean success = false;
-        String pathOriginal = "res/userFiles/" + username;
-        File oldFile = new File("res/userFiles/" + username + File.separator + username + ".akali");
+        String pathOriginal = "Akali\\res/userFiles/" + username;
+        File oldFile = new File("Akali\\res/userFiles/" + username + File.separator + username + ".akali");
         deleteUser(oldFile.getPath());
         if (newOverwrite.getUsername().equals(username)) {
             createUserFile(newOverwrite);
         } else {
             File oldDir = new File(pathOriginal);
-            String newPath = "res/userFiles/" + newOverwrite.getUsername();
+            String newPath = "Akali\\res/userFiles/" + newOverwrite.getUsername();
             createUserFile(newOverwrite);
             assert oldDir.renameTo(new File(newPath));
         }
@@ -115,7 +115,7 @@ public class UserLogic {
     public static boolean consultUser(AbstractUser user) {
         boolean confirmed = false;
         String name = user.getUsername();
-        File f = new File("/res/userFiles/" + name);
+        File f = new File("Akali\\res/userFiles/" + name);
         confirmed = f.exists();
         return confirmed;
     }
@@ -133,8 +133,8 @@ public class UserLogic {
     public static boolean editUser(AbstractUser oldUser, AbstractUser newUser) {
         boolean success = false;
         String oldName = oldUser.getUsername();
-        File f = new File("/res/userFiles/" + oldName);
-        success = deleteUser("/res/userFiles/" + oldName + "/" + oldName + ".akali");
+        File f = new File("Akali\\res/userFiles/" + oldName);
+        success = deleteUser("Akali\\res/userFiles/" + oldName + "/" + oldName + ".akali");
 
 
         return success;
@@ -144,7 +144,7 @@ public class UserLogic {
     public static boolean deleteUser(AbstractUser user) {
         boolean confirm = false;
         String name = user.getUsername();
-        String path = "/res/userFiles/" + name + "/" + name + ".akali";
+        String path = "Akali\\res/userFiles/" + name + "/" + name + ".akali";
         File f = new File(path);
         if (f.delete() && consultUser(user))
             confirm = true;
@@ -164,7 +164,7 @@ public class UserLogic {
     //Add Original file to the common "/res/originalFiles", recieving the file
     public static boolean addOriginal(File f) throws IOException {
         boolean success = false;
-        Path pathCopy = Paths.get("/res/originalFiles/");
+        Path pathCopy = Paths.get("Akali\\res/originalFiles/");
         Path pathOriginal = Paths.get(f.getAbsolutePath());
         Files.copy(pathOriginal, pathCopy, StandardCopyOption.REPLACE_EXISTING);
         assert (Files.readAllLines(pathOriginal).equals(Files.readAllLines(pathCopy)));
@@ -174,7 +174,7 @@ public class UserLogic {
     ////Add Original file to the common "/res/originalFiles", recieving the path of the original
     public static boolean addOriginal(String path) throws IOException {
         boolean success = false;
-        Path pathCopy = Paths.get("/res/originalFiles");
+        Path pathCopy = Paths.get("Akali\\res/originalFiles");
         Path pathOriginal = Paths.get(path);
         Files.copy(pathOriginal, pathCopy, StandardCopyOption.REPLACE_EXISTING);
         assert (Files.readAllLines(pathOriginal).equals(Files.readAllLines(pathCopy)));
@@ -184,7 +184,7 @@ public class UserLogic {
 
     public static boolean addTraduction(File f, String username) throws IOException {
         boolean success = false;
-        Path pathCopy = Paths.get("/res/" + username + "/translated/");
+        Path pathCopy = Paths.get("Akali\\res/userFiles" + username + "/translated/");
         Path pathOriginal = Paths.get(f.getCanonicalPath());
         Files.copy(pathOriginal, pathCopy, StandardCopyOption.REPLACE_EXISTING);
         assert (Files.readAllLines(pathOriginal).equals(Files.readAllLines(pathCopy)));
@@ -210,7 +210,7 @@ public class UserLogic {
     }
 
     public static String getMijo(String username) throws IOException {
-        String path = "res/userFiles/" + username + "/" + username + ".akali";
+        String path = "Akali/res/userFiles/" + username + "/" + username + ".akali";
         File f = new File(path);
         System.out.println("Looking in this path... %s" + f.getAbsoluteFile());
         FileInputStream fin = new FileInputStream(path);
@@ -227,7 +227,7 @@ public class UserLogic {
 
     public static String mijosPrivilege(String username) throws IOException {
         String privilege = null;
-        String path = "res/userFiles/" + username + File.separator + username + ".akali";
+        String path = "Akali/res/userFiles/" + username + File.separator + username + ".akali";
         FileInputStream fis = new FileInputStream(path);
         ObjectInputStream ois = new ObjectInputStream(fis);
         AbstractUser au = null;
