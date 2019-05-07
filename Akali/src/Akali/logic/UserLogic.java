@@ -28,7 +28,7 @@ public class UserLogic {
     public static boolean createUser(AbstractUser o) throws IOException {
         boolean everythingOK = false;
 
-        String dirPath = "res\\userFiles";
+        String dirPath = "Akali\\res\\userFiles";
         String dirTranslate = "translated";
         String newFileName = o.getUsername() + ".akali";
 
@@ -179,6 +179,21 @@ public class UserLogic {
         Files.copy(pathOriginal, pathCopy, StandardCopyOption.REPLACE_EXISTING);
         assert (Files.readAllLines(pathOriginal).equals(Files.readAllLines(pathCopy)));
 
+        return success;
+    }
+
+    public static boolean addTraduction(File f, String username) throws IOException {
+        boolean success = false;
+        Path pathCopy = Paths.get("/res/" + username + "/translated/");
+        Path pathOriginal = Paths.get(f.getCanonicalPath());
+        Files.copy(pathOriginal, pathCopy, StandardCopyOption.REPLACE_EXISTING);
+        assert (Files.readAllLines(pathOriginal).equals(Files.readAllLines(pathCopy)));
+        if (Files.readAllLines(pathOriginal).equals(Files.readAllLines(pathCopy))) {
+            System.out.println("Succesfully uploaded traduction");
+            success = true;
+        } else {
+            System.out.println("Error while uploading");
+        }
         return success;
     }
 
