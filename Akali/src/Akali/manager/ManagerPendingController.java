@@ -62,7 +62,7 @@ public class ManagerPendingController {
         title.setCellValueFactory(new PropertyValueFactory<AbstractResource, String>("title"));
         status.setCellValueFactory(new PropertyValueFactory<AbstractResource, String>("status"));
         button.setCellValueFactory(new PropertyValueFactory<AbstractResource, Button>("button"));
-        table.setItems(getIRes());
+        table.setItems(getData());
 
         }
 

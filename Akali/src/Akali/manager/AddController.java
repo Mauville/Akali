@@ -6,11 +6,13 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import logic.Browse;
 import resource.*;
 import resource.Recording;
 import resource.Text;
 import vistanavigator.VistaNavigator;
 import java.util.ArrayList;
+import static logic.UserLogic.*;
 
 import static logic.Browse.*;
 
@@ -65,6 +67,7 @@ public class AddController {
             rec.setTitle(title.getText());
             addTo(rec);
             vistanavigator.VistaNavigator.loadVista(VistaNavigator.MANAGER_PENDING);
+            setData(Browse.getIRes());
 
 
         }else if(String.valueOf(type.getSelectionModel().getSelectedItem()).equals("Text")){
@@ -82,7 +85,7 @@ public class AddController {
             ((Text) sts).setFil(reso.getText());
 
             addTo(sts);
-
+            setData(Browse.getIRes());
             vistanavigator.VistaNavigator.loadVista(VistaNavigator.MANAGER_PENDING);
 
         }else{
