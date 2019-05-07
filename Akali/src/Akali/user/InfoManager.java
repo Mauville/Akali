@@ -1,6 +1,8 @@
 package user;
 
-public class InfoManager extends AbstractUser {
+import java.io.Serializable;
+
+public class InfoManager extends AbstractUser implements Serializable {
     public void deleteRes() {
 
     }

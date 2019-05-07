@@ -1,6 +1,8 @@
 package user;
 
-public class Consultant extends AbstractUser {
+import java.io.Serializable;
+
+public class Consultant extends AbstractUser implements Serializable {
     public void analyze() {
     }
     public static String getPrivilege(){

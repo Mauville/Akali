@@ -194,7 +194,7 @@ public class UserLogic {
         }
     }
 
-    public AbstractUser getMijo(String username) throws IOException {
+    public static AbstractUser getMijo(String username) throws IOException {
         String path = "res/userFiles/" + "username";
         Scanner scan = new Scanner(System.in);
         FileInputStream fin = new FileInputStream(path);

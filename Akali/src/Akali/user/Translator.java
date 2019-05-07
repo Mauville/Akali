@@ -1,7 +1,9 @@
 package user;
 
 
-public class Translator extends AbstractUser {
+import java.io.Serializable;
+
+public class Translator extends AbstractUser implements Serializable {
     private void analyze() {
 
     }
