@@ -12,8 +12,7 @@ import vistanavigator.VistaNavigator;
 
 import java.io.IOException;
 
-import static logic.UserLogic.createUser;
-import static logic.UserLogic.createUserFile;
+import static logic.UserLogic.*;
 
 public class AddUserController {
     @FXML
@@ -35,7 +34,7 @@ public class AddUserController {
     private Button SignUp;
 
     @FXML
-    void HandleSignIn() {
+    void HandleSignIn() throws IOException {
         //check credentials
         assert username.getText() != null;
         assert password.getText() != null;
@@ -46,15 +45,15 @@ public class AddUserController {
 
         String direct = "CONSULTANT";
 
-        if (passfunct(usrname).equals(pass)) {
-            direct = mijosprivilege(usrname);
+        if (getMijo(usrname).equals(pass)) {
+            direct = mijosPrivilege(usrname);
         }
         redirect(direct.toUpperCase());
     }
 
 
-    private void redirect(AbstractUser requester) {
-        switch (requester.privilege) {
+    private void redirect(String requester) {
+        switch (requester) {
             case "ADMIN":
                 VistaNavigator.loadVista(VistaNavigator.ADMIN_USERLIST);
                 break;
@@ -86,7 +85,6 @@ public class AddUserController {
                 banana.setEmail(RegEmail.getText());
                 banana.setMatricle(RegMatricle.getText());
                 user = banana;
-
                 break;
 
             case "Translator":
@@ -96,7 +94,6 @@ public class AddUserController {
                 mango.setEmail(RegEmail.getText());
                 mango.setMatricle(RegMatricle.getText());
                 user = mango;
-                // Do storage stuff
                 break;
 
             case "InfoManager":
@@ -106,7 +103,6 @@ public class AddUserController {
                 cherry.setEmail(RegEmail.getText());
                 cherry.setMatricle(RegMatricle.getText());
                 user = cherry;
-                // Do storage stuff
                 break;
 
             case "Manager":
@@ -116,7 +112,6 @@ public class AddUserController {
                 mangosteen.setEmail(RegEmail.getText());
                 mangosteen.setMatricle(RegMatricle.getText());
                 user = mangosteen;
-                // Do storage stuff
                 break;
 
             default:
