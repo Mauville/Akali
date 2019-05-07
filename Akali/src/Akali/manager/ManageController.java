@@ -3,6 +3,8 @@ package manager;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import resource.Recording;
+import resource.Text;
 
 
 public class ManageController {
@@ -39,6 +41,17 @@ public class ManageController {
     @FXML
     private Label wintitle;
 
+
+    public void setTex(Text a) {
+        pages.setText(a.getPages());
+        words.setText(a.getWords());
+        title.setText(a.getTitle());
+
+    }
+    public void setRec(Recording b){
+
+    }
+
     @FXML
     void handleCancel(){}
     @FXML
@@ -49,4 +62,10 @@ public class ManageController {
     @FXML
     void handleDelete(){}
     void changeBrowseTextField(){}
+    @FXML
+    void initialize() {
+        setTex();
+    }
+
+    }
 }

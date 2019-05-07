@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.ManagerPendingController">
-    <Label layoutX="71.0" layoutY="66.0" text="Pending">
+    <Label layoutX="71.0" layoutY="66.0" text="Resource Manager">
         <font>
             <Font size="18.0" />
         </font>

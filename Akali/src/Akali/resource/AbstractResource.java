@@ -1,7 +1,7 @@
 package resource;
 
 public abstract class AbstractResource {
-    private String content, language, status, origin, author;
+    private String title, language, status, origin, author;
 
 
     public String getStatus() {
@@ -28,14 +28,6 @@ public abstract class AbstractResource {
         this.language = language;
     }
 
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
     public String getOrigin() {
         return origin;
     }
@@ -44,4 +36,11 @@ public abstract class AbstractResource {
         this.origin = origin;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }

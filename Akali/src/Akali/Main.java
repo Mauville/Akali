@@ -20,7 +20,7 @@ public class Main extends Application {
     }
 
     /**
-     * Loads the main fxml layout.
+     * Loads the main fxml layout.ZZ
      * Sets up the vista switching VistaNavigator.
      * Loads the first vista into the fxml layout.
      *
