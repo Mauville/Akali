@@ -10,9 +10,12 @@ import resource.*;
 import resource.Recording;
 import resource.Text;
 import vistanavigator.VistaNavigator;
+
+import java.io.*;
 import java.util.ArrayList;
 
 import static logic.Browse.*;
+import static logic.UserLogic.*;
 
 public class AddController {
     //public  static ArrayList<AbstractResource> data;
@@ -54,8 +57,6 @@ public class AddController {
 
             AbstractResource rec =new Recording();
 
-
-
             rec.setStatus(String.valueOf(status.getSelectionModel().getSelectedItem()));
             rec.setOrigin(String.valueOf(region.getSelectionModel().getSelectedItem()));
             rec.setAuthor(discoverer.getText());
@@ -65,6 +66,20 @@ public class AddController {
             rec.setTitle(title.getText());
             addTo(rec);
             vistanavigator.VistaNavigator.loadVista(VistaNavigator.MANAGER_PENDING);
+
+            //Convert to file
+            try {
+                File f = new File(rec.getTitle());
+                FileOutputStream fos = new FileOutputStream(f);
+                ObjectOutputStream oos = new ObjectOutputStream(fos);
+                oos.writeObject(rec);
+                oos.close();
+                addOriginal(f, rec.getTitle());
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
 
         }else if(String.valueOf(type.getSelectionModel().getSelectedItem()).equals("Text")){
@@ -85,6 +100,19 @@ public class AddController {
 
             vistanavigator.VistaNavigator.loadVista(VistaNavigator.MANAGER_PENDING);
 
+            try {
+                File f = new File(sts.getTitle());
+                FileOutputStream fos = new FileOutputStream(f);
+                ObjectOutputStream oos = new ObjectOutputStream(fos);
+                oos.writeObject(sts);
+                oos.close();
+                addOriginal(f, sts.getTitle());
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }else{
             Alert tgp= new Alert(Alert.AlertType.ERROR);
             tgp.setTitle("ERROR");
@@ -97,7 +125,7 @@ public class AddController {
 
 
     @FXML
-    void handleRes() {
+    void handleRes() throws IOException {
         openFileChooser(reso);
     }
 

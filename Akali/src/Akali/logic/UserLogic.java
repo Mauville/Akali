@@ -1,5 +1,6 @@
 package logic;
 
+import resource.AbstractResource;
 import user.AbstractUser;
 
 import java.io.File;
@@ -11,6 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserLogic {
@@ -155,9 +157,9 @@ public class UserLogic {
     }
 
     //Add Original file to the common "/res/originalFiles", recieving the file
-    public static boolean addOriginal(File f) throws IOException {
+    public static boolean addOriginal(File f, String fileName) throws IOException {
         boolean success = false;
-        Path pathCopy = Paths.get("Akali\\res/originalFiles/");
+        Path pathCopy = Paths.get("Akali\\res/originalFiles/" + fileName + ".akali");
         Path pathOriginal = Paths.get(f.getAbsolutePath());
         Files.copy(pathOriginal, pathCopy, StandardCopyOption.REPLACE_EXISTING);
         assert (Files.readAllLines(pathOriginal).equals(Files.readAllLines(pathCopy)));
@@ -236,5 +238,34 @@ public class UserLogic {
 
 
     //TODO Recibo un abstract, en la variable initialize.
-    //
+
+    //Return the previously saved data from the observable list
+    public static ArrayList<AbstractResource> getData() throws IOException {
+        FileInputStream fis = new FileInputStream("Akali" + File.separator + "res" + File.separator + "data.akali");
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        ArrayList<AbstractResource> data = null;
+        try {
+            data = (ArrayList<AbstractResource>) ois.readObject();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return data;
+    }
+
+    //Called from AddController, saves current data from the observable list
+    public static void setData(ArrayList data) {
+        File f = new File("Akali" + File.separator + "res" + File.separator + "data.akali");
+        try {
+            FileOutputStream fos = new FileOutputStream(f);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(data);
+            oos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
