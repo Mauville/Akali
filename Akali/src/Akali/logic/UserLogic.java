@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.Scanner;
 
 public class UserLogic {
 //TODO LogIn & SignUp
@@ -193,5 +194,17 @@ public class UserLogic {
         }
     }
 
-
+    public AbstractUser getMijo(String username) throws IOException {
+        String path = "res/userFiles/" + "username";
+        Scanner scan = new Scanner(System.in);
+        FileInputStream fin = new FileInputStream(path);
+        ObjectInputStream ois = new ObjectInputStream(fin);
+        AbstractUser elMijo = null;
+        try {
+            elMijo = (AbstractUser) ois.readObject();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return elMijo;
+    }
 }
