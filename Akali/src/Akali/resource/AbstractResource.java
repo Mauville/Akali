@@ -1,7 +1,18 @@
 package resource;
 
-public abstract class AbstractResource {
+import javafx.collections.ObservableList;
+
+import java.awt.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public abstract class AbstractResource implements Serializable {
     private String title, language, status, origin, author;
+
+    private Button button = new Button("Edit");
+
+
+
 
 
     public String getStatus() {
@@ -42,5 +53,13 @@ public abstract class AbstractResource {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Button getBut() {
+        return button;
+    }
+
+    public void setBut(Button but) {
+        this.button = but;
     }
 }

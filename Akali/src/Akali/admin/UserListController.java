@@ -16,20 +16,29 @@ package admin;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import resource.AbstractResource;
+import user.AbstractUser;
 import vistanavigator.VistaNavigator;
 
 import java.io.*;
 
+import static logic.Browse.getIRes;
+import static logic.Browse.getIUser;
+
 public class UserListController {
 
     @FXML
-    private TableColumn username;
+    private TableView<AbstractUser> table;
     @FXML
-    private TableColumn matricle;
+    private TableColumn <AbstractUser,String> username;
     @FXML
-    private TableColumn privileges;
+    private TableColumn <AbstractUser,String>matricle;
     @FXML
-    private TableColumn buttoncol;
+    private TableColumn <AbstractUser,String>privileges;
+    @FXML
+    private TableColumn <AbstractUser,String>buttoncol;
     @FXML
     private Button backbutt;
 
@@ -71,5 +80,12 @@ public class UserListController {
         return confirmed;
     }
 
-
+    @FXML
+    void initialize(){
+        username.setCellValueFactory(new PropertyValueFactory<AbstractUser, String>("username"));
+        matricle.setCellValueFactory(new PropertyValueFactory<AbstractUser, String>("matricle"));
+        privileges.setCellValueFactory(new PropertyValueFactory<AbstractUser, String>("privileges"));
+        buttoncol.setCellValueFactory(new PropertyValueFactory<AbstractUser, String>("button"));
+        table.setItems(getIUser());
+    }
 }

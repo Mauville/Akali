@@ -1,8 +1,11 @@
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import resource.AbstractResource;
+import user.AbstractUser;
 import vistanavigator.MainController;
 import vistanavigator.VistaNavigator;
 
@@ -17,6 +20,7 @@ public class Main extends Application {
         stage.setTitle("Akali");
         stage.setScene(createScene(loadMainPane()));
         stage.show();
+
     }
 
     /**
@@ -51,4 +55,5 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
 }

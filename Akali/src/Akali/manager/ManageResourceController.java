@@ -5,6 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import vistanavigator.VistaNavigator;
+
+import static vistanavigator.VistaNavigator.MANAGER_PENDING;
 
 public class ManageResourceController {
     @FXML
@@ -28,6 +31,7 @@ public class ManageResourceController {
 
     @FXML
     void handleBack() {
+        VistaNavigator.loadVista(MANAGER_PENDING);
     }
 
     @FXML
