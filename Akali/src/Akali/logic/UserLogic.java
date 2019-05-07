@@ -209,9 +209,8 @@ public class UserLogic {
         }
     }
 
-    public static AbstractUser getMijo(String username) throws IOException {
-        String path = "res/userFiles/" + "username";
-        Scanner scan = new Scanner(System.in);
+    public static String getMijo(String username) throws IOException {
+        String path = "res/userFiles/" + username + "/" + username + ".akali";
         FileInputStream fin = new FileInputStream(path);
         ObjectInputStream ois = new ObjectInputStream(fin);
         AbstractUser elMijo = null;
@@ -220,6 +219,22 @@ public class UserLogic {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return elMijo;
+        System.out.println("Username that wil return is " + elMijo.getUsername());
+        return elMijo.getPassword();
+    }
+
+    public static String mijosPrivilege(String username) throws IOException {
+        String privilege = null;
+        String path = "res/userFiles/" + username + File.separator + username + ".akali";
+        FileInputStream fis = new FileInputStream(path);
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        AbstractUser au = null;
+        try {
+            au = (AbstractUser) ois.readObject();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        privilege = au.getPrivilege();
+        return privilege;
     }
 }
